@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+
+#app-name {
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    background-color: #ffcc6c;
+    height: 85px;
+}
+
 .my-btn {
     width: 100%;
     border: 1px solid #ccc;
@@ -7,19 +18,51 @@
 }
 
 .submit-btn {
+    transition-duration: 0.3s;
     background-color: rgb(49, 150, 49);
     border: 1px solid rgb(49, 150, 49);
     color: white;
 }
 
+input[type=text][name=firstname] {
+    width: 30%;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+input[type=text][name=lastname] {
+    width: 30%;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+input[type=text][name=pplnum] {
+    width: 5%;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+input[type=text][name=tel] {
+    width: 25%;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
 .my-form {
-    margin: 20px 10px;
-    color: white;
+    font-family: 'Athiti', sans-serif;
+    margin: 20px 30%;
+    color: rgb(0, 0, 0);
 }
 
 .submit-btn:hover {
     background-color: rgb(39, 119, 39);
-    color: rgb(49, 150, 49);
+    color: rgb(255, 255, 255);
 }
 
 .btn-sec {
