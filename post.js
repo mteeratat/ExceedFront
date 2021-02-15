@@ -25,13 +25,23 @@ app = document.getElementById("app");
 let butt = document.getElementById("test");
 butt.addEventListener("click", () => {
   console.log("hello");
-  fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
-  // fetch("https://randomuser.me/api/?results=10",{
-    method: "GET"
+  // fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
+  fetch("https://randomuser.me/api/?results=10",{
+    method: "GET",
+    headers: { "Content-Type": "application/json" }
   })
   .then((data) => data.text())
   .then((data) => console.log(data))
   .catch((error) => console.log("error na krub",error));
+});
+
+let reset = document.getElementById("reset");
+reset.addEventListener("click", () => {
+  console.log("reset na krub");
+  document.getElementById("firstname").value="";
+  document.getElementById("lastname").value="";
+  document.getElementById("pplnum").value="";
+  document.getElementById("tel").value="";
 });
 
 
