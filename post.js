@@ -45,6 +45,7 @@ reset.addEventListener("click", () => {
 });
 
 
+
 function scream(firstname, lastname, pplnum, tel) {
   fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/view/1", {
     method: "POST",
@@ -69,4 +70,5 @@ form.addEventListener("submit", (event) => {
   form.elements["lastname"].value = "";
   form.elements["pplnum"].value = "";
   form.elements["tel"].value = "";
+  document.location.href = "submitSuccess.html";
 });
