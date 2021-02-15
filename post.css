@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&display=swap');
 
 #app-name {
     font-size: 50px;
@@ -18,6 +19,8 @@
 }
 
 .submit-btn {
+    font-family: 'Asap', sans-serif;
+    font-size: medium;
     transition-duration: 0.3s;
     background-color: rgb(49, 150, 49);
     border: 1px solid rgb(49, 150, 49);
@@ -41,7 +44,7 @@ input[type=text][name=lastname] {
 input[type=text][name=pplnum] {
     width: 5%;
     padding: 10px 20px;
-    margin: 10px 10px;
+    margin: 10px 19% 10px 10px;
     border: 1px solid gray;
     border-radius: 5px;
 }
