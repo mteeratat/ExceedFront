@@ -4,15 +4,15 @@
 
 #app-name {
     font-size: 50px;
-    color: #fae3d9;
+    color: #d2eb66;
     font-family: 'Pacifico', cursive;
     text-align: center;
-    background-color: #fc5185;
+    background-color: #5154fc;
     height: 85px;
 }
 
 body {
-    background: linear-gradient(180deg, #bbded6 0%, #61c0bf 100%);
+    background: linear-gradient(180deg, #f5f5f5 0%, #e7e9e9 100%);
 }
 .my-btn {
     width: 100%;
@@ -29,6 +29,10 @@ body {
     background-color: #009e77;
     border: 1px solid #009e77;
     color: white;
+}
+
+.test-btn {
+    
 }
 
 input[type=text] {
@@ -74,11 +78,11 @@ input[type=text][name=tel] {
     font-size: large;
     font-family: 'Athiti', sans-serif;
     margin: 1% 30%;
-    color: rgb(255, 255, 255);
+    color: rgb(70, 86, 179);
 }
 
 .submit-btn:hover {
-    background-color: #00b487;
+    background-color: #b43900;
     color: rgb(255, 255, 255);
 }
 
