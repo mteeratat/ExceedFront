@@ -12,7 +12,8 @@
 }
 
 body {
-    background: linear-gradient(180deg, #f5f5f5 0%, #e7e9e9 100%);
+    background-color: #ffffff;
+    /* background: linear-gradient(180deg, #f5f5f5 0%, #e7e9e9 100%); */
 }
 .my-btn {
     width: 100%;
@@ -32,7 +33,21 @@ body {
 }
 
 .test-btn {
-    
+    font-family: 'Asap', sans-serif;
+    font-size: medium;
+    transition-duration: 0.3s;
+    background-color: #009e77;
+    border: 1px solid #009e77;
+    color: white;
+}
+
+.reset-btn {
+    font-family: 'Asap', sans-serif;
+    font-size: medium;
+    transition-duration: 0.3s;
+    background-color: #009e77;
+    border: 1px solid #009e77;
+    color: white;
 }
 
 input[type=text] {
@@ -82,9 +97,18 @@ input[type=text][name=tel] {
 }
 
 .submit-btn:hover {
-    background-color: #b43900;
+    background-color: #91ca26;
+    border: 1px solid #91ca26;
     color: rgb(255, 255, 255);
 }
+
+.reset-btn:hover{
+    background-color: #ad1d1d;
+    border: 1px solid #ad1d1d;
+    color: rgb(255, 255, 255);
+}
+
+
 
 .btn-sec {
     display: flex;
