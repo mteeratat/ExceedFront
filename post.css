@@ -59,6 +59,10 @@ input[type=text] {
     border-radius: 5px;
 }
 
+.hr {
+    margin-top: 20%;
+}
+
 /* input[type=text][name=firstname] {
     width: 100%;
     padding: 10px 2%;
