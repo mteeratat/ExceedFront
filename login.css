@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 html {
     height: 100%;
 }
@@ -5,11 +7,18 @@ html {
 body {
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     display: grid;
     justify-items: center;
     align-items: center;
     background-color: #3a3a3a;
+}
+
+#login-header {
+    font-family: 'Righteous', cursive;
+    justify-items: center;
+    align-items: center;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
 }
 
 #main-holder {
@@ -20,7 +29,7 @@ body {
     align-items: center;
     background-color: white;
     border-radius: 7px;
-    box-shadow: 0px 0px 5px 2px black;
+    box-shadow: 0px 0px 5px 2px rgb(0, 0, 0);
 }
 
 #login-error-msg-holder {
@@ -32,7 +41,7 @@ body {
 }
  
 #login-error-msg {
-    width: 23%;
+    width: 100%;
     text-align: center;
     margin: 0;
     padding: 5px;
@@ -69,6 +78,7 @@ body {
 }
 
 #login-form-submit {
+    transition-duration: 0.3s;
     width: 100%;
     padding: 7px;
     border: none;
@@ -78,4 +88,9 @@ body {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
+}
+
+#login-form-submit:hover {
+    background-color: #474747;
+    color: rgb(255, 255, 255);
 }
