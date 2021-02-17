@@ -3,5 +3,18 @@
 }
 
 .app{
-    display:flex;
+    display: flex;
+    justify-content: center;
+}
+
+#store-list{
+    justify-content: left;
+
+}
+
+#store-info{
+    display: flex;
+    background-color: rgb(221, 153, 27);
+    justify-content: center;
+    text-align: center;
 }
