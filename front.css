@@ -5,3 +5,8 @@
 .app{
     display: flex;
 }
+
+.store-info{
+    display: flex;
+    justify-content: flex;
+}
