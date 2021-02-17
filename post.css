@@ -59,9 +59,9 @@ input[type=text] {
     border-radius: 5px;
 }
 
-.hr {
-    margin-top: 20%;
-}
+/* .hr {
+    margin-top: 5%;
+} */
 
 /* input[type=text][name=firstname] {
     width: 100%;
@@ -107,7 +107,7 @@ input[type=text][name=tel] {
     color: rgb(255, 255, 255);
 }
 
-.reset-btn:hover{
+.reset-btn:hover {
     background-color: #ad1d1d;
     border: 1px solid #ad1d1d;
     color: rgb(255, 255, 255);
