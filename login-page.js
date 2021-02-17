@@ -7,7 +7,7 @@ function login(){
 
     if (username == "admin" && password == "1234"){
         alert("Login successfully!")
-        location.href = "./post.html"
+        location.href = "./admin.html"
     } 
     else{
         document.getElementById("errormsg").innerHTML = "Invalid username and/or password"
