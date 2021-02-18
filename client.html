@@ -1,5 +1,3 @@
-<<<<<<< HEAD:front.html
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOORSon</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="client.css">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
@@ -28,8 +27,21 @@
         </div>
     </div>
 
-    <div class="container">
-        <canvas id="myChart"></canvas>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-DOORson-tab" data-toggle="pill" href="#v-pills-DOORSon" role="tab" aria-controls="v-pills-DOORSon" aria-selected="true">DOORSon</a>
+                    <a class="nav-link" id="v-pills-ร้าน1-tab" data-toggle="pill" href="#v-pills-ร้าน1" role="tab" aria-controls="v-pills-ร้าน1" aria-selected="false">ร้าน1</a>
+                    <a class="nav-link" id="v-pills-ร้าน2-tab" data-toggle="pill" href="#v-pills-ร้าน2" role="tab" aria-controls="v-pills-ร้าน2" aria-selected="false">ร้าน2</a>
+                    <a class="nav-link" id="v-pills-ร้าน3-tab" data-toggle="pill" href="#v-pills-ร้าน3" role="tab" aria-controls="v-pills-ร้าน3" aria-selected="false">ร้าน3</a>
+                  </div>
+            </div>
+            <div class="col-6">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
     </div>
 
     <p>คุ</p>
@@ -52,6 +64,8 @@
         <input class="my-btn" type="button" name="login" id="login" value="Login"/>
     </footer>
     <script src="client.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
->>>>>>> befe47e31f4d9d833f5b1ae5dc9c1a88c3b4141a:client.html
+
