@@ -11,58 +11,34 @@
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
-<body>
-    <h1 class="front-header">DooRSon</h1>    
-
-
-    <div class="app" id="app">
-        <div class="store-list" id="store-list">
-            <input class="my-btn home-btn" type="button" name="home" id="home" value="Home"/>
-            <input class="my-btn home-btn" type="button" name="store1" id="store1" value="Store 1"/>
-            <input class="my-btn home-btn" type="button" name="store2" id="store2" value="Store 2"/>
-            <input class="my-btn home-btn" type="button" name="store3" id="store3" value="Store 3"/>            
-        </div>              
-        <div class="store-info" id="store-info">
-            <h1 class="store-name">ข้อมูลของ: ร้าน1</h1>
-        </div>
-    </div>
-
+<body>  
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-5">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-DOORson-tab" data-toggle="pill" href="#v-pills-DOORSon" role="tab" aria-controls="v-pills-DOORSon" aria-selected="true">DOORSon</a>
-                    <a class="nav-link" id="v-pills-ร้าน1-tab" data-toggle="pill" href="#v-pills-ร้าน1" role="tab" aria-controls="v-pills-ร้าน1" aria-selected="false">ร้าน1</a>
-                    <a class="nav-link" id="v-pills-ร้าน2-tab" data-toggle="pill" href="#v-pills-ร้าน2" role="tab" aria-controls="v-pills-ร้าน2" aria-selected="false">ร้าน2</a>
-                    <a class="nav-link" id="v-pills-ร้าน3-tab" data-toggle="pill" href="#v-pills-ร้าน3" role="tab" aria-controls="v-pills-ร้าน3" aria-selected="false">ร้าน3</a>
-                  </div>
+        <div class="card text-white bg-dark mb-3" style="max-width: 100%;">
+            <div class="card-body mx-auto">
+              <h5 class="card-title">DOORSon</h5>
             </div>
-            <div class="col-6">
+          </div>
+        <div class="row">
+            <div class="col-3">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-DORSON-tab" data-toggle="pill" href="#v-pills-DORSON" role="tab" aria-controls="v-pills-DORSON" aria-selected="true">DORSON</a>
+                <a class="nav-link" id="v-pills-ร้าน1-tab" data-toggle="pill" href="#v-pills-ร้าน1" role="tab" aria-controls="v-pills-ร้าน1" aria-selected="false">ร้าน1</a>
+                <a class="nav-link" id="v-pills-ร้าน2-tab" data-toggle="pill" href="#v-pills-ร้าน2" role="tab" aria-controls="v-pills-ร้าน2" aria-selected="false">ร้าน2</a>
+                <a class="nav-link" id="v-pills-ร้าน3-tab" data-toggle="pill" href="#v-pills-ร้าน3" role="tab" aria-controls="v-pills-ร้าน3" aria-selected="false">ร้าน3</a>
+              </div>
+            </div>
+            <div class="col-9">
                 <canvas id="myChart"></canvas>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-3">
+                <button type="button" class="btn btn-dark" style="width: 100%; height: 100%;">LOGIN</button>
+            </div>
+        </div>
+        </div>
     </div>
 
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-    <p>คุ</p>
-
-
-    <footer>
-        <input class="my-btn" type="button" name="login" id="login" value="Login"/>
-    </footer>
     <script src="client.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>

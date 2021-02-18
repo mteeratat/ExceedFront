@@ -30,6 +30,17 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-rosequartz: rgba(248,205,205);
+  --bs-granitegray: rgba(105,102,103);
+  --bs-clouddancer: rgba(241,240,236);
+  --bs-lupine: rgba(190,160,196);
+  --bs-luminarygreen: rgba(226,233,166);
+  --bs-senerity: rgba(149,170,211);
+  --bs-arcticice: rgba(194,201,214);
+  --bs-opalblue: rgba(195,222,215);
+  --bs-puritangray: rgba(160,173,170);
+
+
 }
 
 *,
