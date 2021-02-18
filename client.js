@@ -41,7 +41,7 @@ let massPopChart = new Chart(myChart, {
             fontSize: 25
         },
         legend: {
-            display: false,
+            display: true,
             position: "right",
             labels: {
                 fontColor: "#000"
@@ -50,6 +50,9 @@ let massPopChart = new Chart(myChart, {
         layout: {
             padding: {
                 left: 50,
+                right: 0,
+                top: 0,
+                bottom: 0
             }
         }
 
