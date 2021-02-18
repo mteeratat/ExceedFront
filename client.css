@@ -1,0 +1,23 @@
+<<<<<<< HEAD:front.css
+=======
+.my-btn {
+    display: flex;
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+}
+
+#store-list{
+    justify-content: left;
+
+}
+
+#store-info{
+    display: flex;
+    background-color: rgb(221, 153, 27);
+    justify-content: center;
+    text-align: center;
+}
+>>>>>>> befe47e31f4d9d833f5b1ae5dc9c1a88c3b4141a:client.css

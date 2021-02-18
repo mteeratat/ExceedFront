@@ -26,9 +26,9 @@ let butt = document.getElementById("test");
 butt.addEventListener("click", () => {
   console.log("hello");
   // fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
-  fetch("https://randomuser.me/api/?results=10",{
+  // fetch("https://randomuser.me/api/?results=10",{
+  fetch("http://158.108.182.14:50004/data",{
     method: "GET",
-    headers: { "Content-Type": "application/json" }
   })
   .then((data) => data.text())
   .then((data) => console.log(data))
