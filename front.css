@@ -4,9 +4,26 @@
 
 .app{
     display: flex;
+<<<<<<< HEAD
+    justify-content: center;
 }
 
+<<<<<<< HEAD
 .store-info{
     display: flex;
     justify-content: flex;
+=======
+#store-list{
+    justify-content: left;
+
+=======
+>>>>>>> f3a16066ff9c3f9f599e3d7403a2f38e0dcbdde1
+}
+
+#store-info{
+    display: flex;
+    background-color: rgb(221, 153, 27);
+    justify-content: center;
+    text-align: center;
+>>>>>>> 1be8d50af2bb3e406e9b9923dfbc6917b46da95d
 }
