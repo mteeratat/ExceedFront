@@ -1,9 +1,31 @@
-.app{
+/* .app{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}   */
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.my-btn{
+    padding: 20% 30%;
 }
 
-.pic1 {
-    width: 10%;
-    height: 10%;
+.btn{
+    display: flex;
+    justify-content: center;
+  
+    font-size: x-large ;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-title{
+    text-align: center;
 }
