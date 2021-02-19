@@ -9,38 +9,47 @@ let myChart = document.getElementById("myChart").getContext("2d");
 let massPopChart = new Chart(myChart, {
     type: "line",
     data: {
-        labels: ["Jan", "Feb", "March", "April"],
+        labels: ["10:00", "10:11", "11:00", "12:10", "13:00", "13:10", "14:14", "15:15"],
         datasets: [{
-            backgroundColor: [
+            backgroundColor: 
                 "rgba(248, 205, 205, 0.6)"
-            ],
+            ,
             borderColor: "rgba(194, 201, 214, 0.6)",
             borderCapStyle: "round",
             borderWidth: "5",
-            clip: {left: 5, top: false, right: -2, bottom: 0},
+            // clip: {left: false, top: false, right: false, bottom: false},
             label: "Population",
             fill: true,
             lineTension: 0.1,
-            hoverBackgroundColor: [
-                "rgba(248, 205, 205, 0.8)"
-            ],
-            hoverBorderColor: "rgba(194, 201, 214, 0.8)",
-            order: 0,
-            pointBorderColor: [
-                "rgba(248, 205, 205, 0.6)"
-            ],
+            hoverBackgroundColor: 
+                "rgba(194, 201, 214, 0.8)"
+            ,
+            hoverBorderColor: "green",
+            pointBorderColor: 
+                "rgba(194, 201, 214, 0.6)"
+            ,
             pointBorderWidth: 5,
             pointHitRadius: 5,
-            pointHoverBackgroundColor: [
+            pointHoverBackgroundColor:
                 "rgba(248, 205, 205, 0.8)"
-            ],
+            ,
             pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
             pointHoverBorderWidth: 5,
             pointRadius: 10,
             pointStyle: "circle",
             showLine: true,
             
-            data: [20, 10, 30, 20]
+            data: [20, 10, 30, 20, 10, 20, 30, 40]
         }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks:{
+                    // suggestedMin: 0,
+                    beginAtZero: true          
+                }
+            }]
+        }
     }
 });
