@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+
 .my-btn {
     display: flex;
 }
@@ -17,4 +19,22 @@
     background-color: rgb(221, 153, 27);
     justify-content: center;
     text-align: center;
+}
+
+.header {
+    font-family: 'Athiti', sans-serif;
+}
+
+.card-line {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.card-text1,.card-text2 {
+    font-family: 'Athiti', sans-serif;
+}
+
+.nav-link {
+    font-family: 'Athiti', sans-serif;
 }
