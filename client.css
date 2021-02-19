@@ -44,6 +44,7 @@
 .nav-link {
     font-size:  large;
     font-weight: bold;
+    /* padding-right: 0%; */
     border-bottom: 0.75px solid rgba(241,240,236,0.6);
     border-radius: 0.15rem;
     text-align: justify;
@@ -53,6 +54,10 @@
 .col-2{
     padding: 0%;
 }
+.card{
+    border: none;
+}
+
 .my-custom-scrollbar {
     position: relative;
     height: 200px;
