@@ -17,7 +17,7 @@ let massPopChart = new Chart(myChart, {
             borderColor: "rgba(194, 201, 214, 0.6)",
             borderCapStyle: "round",
             borderWidth: "5",
-            clip: {left: 5, top: false, right: -2, bottom: 0},
+            clip: {left: 50, top: false, right: -2, bottom: 0},
             label: "Population",
             fill: true,
             lineTension: 0.1,
