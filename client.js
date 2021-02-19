@@ -62,3 +62,58 @@ let massPopChart = new Chart(myChart, {
 function login(){
     location.href = "./login-page.html"
 }
+
+
+let shopName1 = document.getElementById("v-pills-ร้าน1-tab");
+shopName1.addEventListener("click", () => {
+    console.log("ร้าน1ครับ");
+    document.getElementById("header").innerText="ร้านที่ 1";
+    delrow();
+    addrow();
+});
+
+let shopName2 = document.getElementById("v-pills-ร้าน2-tab");
+shopName2.addEventListener("click", () => {
+    console.log("ร้าน2ครับ");
+    document.getElementById("header").innerText="ร้านที่ 2";
+    delrow();
+    addrow();
+});
+
+let shopName3 = document.getElementById("v-pills-ร้าน3-tab");
+shopName3.addEventListener("click", () => {
+    console.log("ร้าน3ครับ");
+    document.getElementById("header").innerText="ร้านที่ 3";
+    delrow();
+    addrow();
+});
+
+var i=0;
+
+function addrow() {
+    var table = document.getElementById("myTable");
+    i++;
+    var row = table.insertRow(1);
+    row.classList.add("myRow");
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
+    cell3.innerHTML = "NEW CELL4";
+    cell4.innerHTML = "NEW CELL5";
+}
+
+function delrow() {
+    var table = document.getElementById("myTable");
+    // var row = document.g
+    // table.parentNode.removeChild()
+    $('.myRow').remove();
+}
+  
+  
+//   setInterval(() => {
+//     console.log(i);
+//     addrow();
+//   },5000 );
