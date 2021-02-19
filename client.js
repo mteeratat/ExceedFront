@@ -63,28 +63,59 @@ function login(){
     location.href = "./login-page.html"
 }
  
+let homeButt = document.getElementById("v-pills-DOORSON-tab");
+homeButt.addEventListener("click", () => {
+    
+    document.getElementById("header").innerText="DOORSon";
+    delrow();
+    homeButt.style.background="rgb(147, 117, 255)";
+    shopName1.style.background="rgb(111, 83, 212)";
+    shopName2.style.background="rgb(111, 83, 212)";
+    shopName3.style.background="rgb(111, 83, 212)";
+
+    console.log("ดอสั้นครับ");
+});
+
 let shopName1 = document.getElementById("v-pills-ร้าน1-tab");
 shopName1.addEventListener("click", () => {
-    console.log("ร้าน1ครับ");
+    
     document.getElementById("header").innerText="ร้านที่ 1";
     delrow();
     addrow();
+    shopName1.style.background="rgb(147, 117, 255)";
+    homeButt.style.background="rgb(111, 83, 212)";
+    shopName2.style.background="rgb(111, 83, 212)";
+    shopName3.style.background="rgb(111, 83, 212)";
+    
+    console.log("ร้าน1ครับ");
 });
 
 let shopName2 = document.getElementById("v-pills-ร้าน2-tab");
 shopName2.addEventListener("click", () => {
-    console.log("ร้าน2ครับ");
+    
     document.getElementById("header").innerText="ร้านที่ 2";
     delrow();
     addrow();
+    shopName2.style.background="rgb(147, 117, 255)";
+    homeButt.style.background="rgb(111, 83, 212)";
+    shopName1.style.background="rgb(111, 83, 212)";
+    shopName3.style.background="rgb(111, 83, 212)";
+
+    console.log("ร้าน2ครับ");
 });
 
 let shopName3 = document.getElementById("v-pills-ร้าน3-tab");
 shopName3.addEventListener("click", () => {
-    console.log("ร้าน3ครับ");
+    
     document.getElementById("header").innerText="ร้านที่ 3";
     delrow();
     addrow();
+    shopName3.style.background="rgb(147, 117, 255)";
+    homeButt.style.background="rgb(111, 83, 212)";
+    shopName1.style.background="rgb(111, 83, 212)";
+    shopName2.style.background="rgb(111, 83, 212)";
+
+    console.log("ร้าน3ครับ");
 });
 let aa = document.getElementById("v-pills-tab");
 aa.style.style.background-color(rgb(147, 117, 0))
@@ -111,7 +142,7 @@ function delrow() {
         a.remove()
     })
 }
-  
+
 
   
 //   setInterval(() => {
