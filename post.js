@@ -27,48 +27,61 @@ butt.addEventListener("click", () => {
   console.log("hello");
   // fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
   // fetch("https://randomuser.me/api/?results=10",{
-  fetch("http://158.108.182.14:50004/data",{
+  fetch("http://158.108.182.14:50004/data", {
     method: "GET",
   })
-  .then((data) => data.text())
-  .then((data) => console.log(data))
-  .catch((error) => console.log("error na krub",error));
+    .then((data) => data.text())
+    .then((data) => console.log(data))
+    .catch((error) => console.log("error na krub", error));
 });
 
 let reset = document.getElementById("reset");
 reset.addEventListener("click", () => {
   console.log("reset na krub");
-  document.getElementById("firstname").value="";
-  document.getElementById("lastname").value="";
-  document.getElementById("pplnum").value="";
-  document.getElementById("tel").value="";
+  document.getElementById("firstname").value = "";
+  document.getElementById("lastname").value = "";
+  document.getElementById("pplnum").value = "";
+  document.getElementById("tel").value = "";
 });
 
 
-
 function scream(firstname, lastname, pplnum, tel) {
-  fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/view/1", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),
+  return new Promise((resolve, reject) => {
+    fetch("http://158.108.182.14:50004/data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),
+    })
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .then(() => {resolve(true)})
+      .catch((error) => console.log("error", error));
   })
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
 }
+
+// function scream(firstname, lastname, pplnum, tel) {
+//   fetch("http://158.108.182.14:50004/data", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),
+//   })
+//     .then((response) => response.text())
+//     .then((result) => console.log(result))
+//     .catch((error) => console.log("error", error));
+// }
 
 // เอา function ผูกกับ form ใน html
 let form = document.getElementById("information");
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   firstname = form.elements["firstname"].value;
   lastname = form.elements["lastname"].value;
   pplnum = form.elements["pplnum"].value;
   tel = form.elements["tel"].value;
-  scream(firstname, lastname, pplnum, tel);
+  await scream(firstname, lastname, pplnum, tel);
   form.elements["firstname"].value = "";
   form.elements["lastname"].value = "";
   form.elements["pplnum"].value = "";
   form.elements["tel"].value = "";
-  document.location.href = "submitSuccess.html";
+  document.location.href = "./submitSuccess.html";
 });
