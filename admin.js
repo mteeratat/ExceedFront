@@ -9,7 +9,7 @@ let myChart = document.getElementById("myChart").getContext("2d");
 let massPopChart = new Chart(myChart, {
     type: "line",
     data: {
-        labels: ["10:00", "10:11", "11:00", "12:10", "13:00", "13:10", "14:14", "15:15"],
+        labels: ["10:00", "10:11", "11:00", "12:10", "13:00", "13:10", "14:14", "15:15", "16.16"],
         datasets: [{
             backgroundColor: 
                 "rgba(248, 205, 205, 0.6)"
@@ -39,7 +39,7 @@ let massPopChart = new Chart(myChart, {
             pointStyle: "circle",
             showLine: true,
             
-            data: [20, 10, 30, 20, 10, 20, 30, 40]
+            data: [20, 10, 30, 20, 10, 20, 30, 40, 39]
         }]
     },
     options: {
