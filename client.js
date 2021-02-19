@@ -86,7 +86,8 @@ shopName3.addEventListener("click", () => {
     delrow();
     addrow();
 });
-
+let aa = document.getElementById("v-pills-tab");
+aa.style.style.background-color(rgb(147, 117, 0))
 var i=0;
 
 function addrow() {
