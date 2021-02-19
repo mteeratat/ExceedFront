@@ -58,3 +58,7 @@ let massPopChart = new Chart(myChart, {
 
     }
 });
+
+function login(){
+    location.href = "./login-page.html"
+}
