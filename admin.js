@@ -6,10 +6,17 @@ let myChart = document.getElementById("myChart").getContext("2d");
 // Chart.defaults.global.defaultFontSize = "8";
 // Chart.defaults.global.defaultFontColor = "#777";
 
+var testData = ["9:00","10:00","11:00","12:00"];
+testData.push("13:00");
+
 let massPopChart = new Chart(myChart, {
     type: "line",
     data: {
+<<<<<<< HEAD
         labels: ["10:00", "10:11", "11:00", "12:10", "13:00", "13:10", "14:14", "15:15", "16.16"],
+=======
+        labels: testData,
+>>>>>>> 7aeeeada47d99c4a86322f1d60adbfda3166b23c
         datasets: [{
             backgroundColor: 
                 "rgba(248, 205, 205, 0.6)"

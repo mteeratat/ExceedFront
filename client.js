@@ -107,9 +107,9 @@ function addrow() {
 
 function delrow() {
     var table = document.getElementById("myTable");
-    // var row = document.g
-    // table.parentNode.removeChild()
-    $('.myRow').remove();
+    document.querySelectorAll('.myRow').forEach(function(a){
+        a.remove()
+    })
 }
   
   
