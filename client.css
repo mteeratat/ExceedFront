@@ -42,14 +42,17 @@
 }
 
 .nav-link {
-    font-size: x-large;
+    font-size:  x-large;
     font-weight: bold;
-    border-bottom: 0.75px solid rgba(241,240,236,0.5);
+    border-bottom: 0.75px solid rgba(241,240,236,0.6);
     border-radius: 0.15rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .col-2{
     padding: 0%;
+    
 }
 .my-custom-scrollbar {
     position: relative;

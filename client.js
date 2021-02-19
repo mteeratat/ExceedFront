@@ -62,12 +62,67 @@ let massPopChart = new Chart(myChart, {
 function login(){
     location.href = "./login-page.html"
 }
+
+var dataShop1 = [{
+    "firstname": "test",
+    "lastname": "sadf",
+    "pplnum": "4",
+    "tel": "0987654321",
+    "date": "19/Feb/2021",
+    "time": "17:43:38",
+    "hour": "17",
+    "store": "1"
+},{
+    "firstname": "test",
+    "lastname": "sadf",
+    "pplnum": "4",
+    "tel": "0987654321",
+    "date": "19/Feb/2021",
+    "time": "17:43:38",
+    "hour": "17",
+    "store": "1"
+},{
+    "firstname": "test",
+    "lastname": "sadf",
+    "pplnum": "4",
+    "tel": "0987654321",
+    "date": "19/Feb/2021",
+    "time": "17:43:38",
+    "hour": "17",
+    "store": "1"
+}];
+var dataShop2 = [{
+    "firstname": "perza",
+    "lastname": "asds",
+    "pplnum": "3",
+    "tel": "0987654321",
+    "date": "19/Feb/2021",
+    "time": "17:21:58",
+    "hour": "17",
+    "store": "2"
+}]
+var dataShop3 = [{
+    "firstname": "m",
+    "lastname": "kuau",
+    "pplnum": "1",
+    "tel": "0987654332",
+    "date": "19/Feb/2021",
+    "time": "18:27:26",
+    "hour": "18",
+    "store": "3"
+}];
  
 let homeButt = document.getElementById("v-pills-DOORSON-tab");
 homeButt.addEventListener("click", () => {
     
     document.getElementById("header").innerText="DOORSon";
     delrow();
+    let Tae = document.getElementById("PTae").style.display="initial";
+    let To = document.getElementById("PTo").style.display="initial";
+    let table = document.getElementById("myTable").style.display="initial";
+    let card = document.getElementById("numCard").style.display="initial";
+
+
     homeButt.style.background="rgb(147, 117, 255)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
@@ -81,7 +136,11 @@ shopName1.addEventListener("click", () => {
     
     document.getElementById("header").innerText="ร้านที่ 1";
     delrow();
-    addrow();
+    let Tae = document.getElementById("PTae").style.display="none";
+    let To = document.getElementById("PTo").style.display="none";
+
+    dataShop1.forEach((datashop1) => addrow());
+
     shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
@@ -117,10 +176,11 @@ shopName3.addEventListener("click", () => {
 
     console.log("ร้าน3ครับ");
 });
-
+let aa = document.getElementById("v-pills-tab");
+aa.style.style.background-color(rgb(147, 117, 0))
 var i=0;
 
-function addrow() {
+function addrow(data) {
     var table = document.getElementById("myTable");
     i++;
     var row = table.insertRow(1);
@@ -129,7 +189,7 @@ function addrow() {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
-    cell1.innerHTML = "NEW CELL1";
+    cell1.innerHTML = "NEW CELL2";
     cell2.innerHTML = "NEW CELL2";
     cell3.innerHTML = "NEW CELL4";
     cell4.innerHTML = "NEW CELL5";
