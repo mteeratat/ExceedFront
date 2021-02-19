@@ -152,8 +152,8 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
-    
-    dataShop1.forEach((datashop1) => addrow());
+    console.log(dataShop1);
+    dataShop1.forEach(() => addrow());
 
     shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -175,7 +175,7 @@ shopName2.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    dataShop2.forEach((datashop2) => addrow());
+    dataShop2.forEach(() => addrow());
 
     shopName2.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -197,7 +197,7 @@ shopName3.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    dataShop3.forEach((datashop3) => addrow());
+    dataShop3.forEach(() => addrow());
 
     shopName3.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -206,11 +206,10 @@ shopName3.addEventListener("click", () => {
 
     console.log("ร้าน3ครับ");
 });
-let aa = document.getElementById("v-pills-tab");
-aa.style.style.background-color(rgb(147, 117, 0))
+
 var i=0;
 
-function addrow(data) {
+function addrow() {
     var table = document.getElementById("myTable");
     i++;
     var row = table.insertRow(1);
@@ -219,6 +218,7 @@ function addrow(data) {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+    console.log(data);
     cell1.innerHTML = "NEW CELL2";
     cell2.innerHTML = "NEW CELL2";
     cell3.innerHTML = "NEW CELL4";
