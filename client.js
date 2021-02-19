@@ -72,24 +72,6 @@ var dataShop1 = [{
     "time": "17:43:38",
     "hour": "17",
     "store": "1"
-},{
-    "firstname": "test",
-    "lastname": "sadf",
-    "pplnum": "4",
-    "tel": "0987654321",
-    "date": "19/Feb/2021",
-    "time": "17:43:38",
-    "hour": "17",
-    "store": "1"
-},{
-    "firstname": "test",
-    "lastname": "sadf",
-    "pplnum": "4",
-    "tel": "0987654321",
-    "date": "19/Feb/2021",
-    "time": "17:43:38",
-    "hour": "17",
-    "store": "1"
 }];
 var dataShop2 = [{
     "firstname": "perza",
@@ -100,8 +82,35 @@ var dataShop2 = [{
     "time": "17:21:58",
     "hour": "17",
     "store": "2"
-}]
+},{
+    "firstname": "perza",
+    "lastname": "asds",
+    "pplnum": "3",
+    "tel": "0987654321",
+    "date": "19/Feb/2021",
+    "time": "17:21:58",
+    "hour": "17",
+    "store": "2"
+}];
 var dataShop3 = [{
+    "firstname": "m",
+    "lastname": "kuau",
+    "pplnum": "1",
+    "tel": "0987654332",
+    "date": "19/Feb/2021",
+    "time": "18:27:26",
+    "hour": "18",
+    "store": "3"
+},{
+    "firstname": "m",
+    "lastname": "kuau",
+    "pplnum": "1",
+    "tel": "0987654332",
+    "date": "19/Feb/2021",
+    "time": "18:27:26",
+    "hour": "18",
+    "store": "3"
+},{
     "firstname": "m",
     "lastname": "kuau",
     "pplnum": "1",
@@ -117,12 +126,13 @@ homeButt.addEventListener("click", () => {
     
     document.getElementById("header").innerText="DOORSon";
     delrow();
+
     let Tae = document.getElementById("PTae").style.display="initial";
     let To = document.getElementById("PTo").style.display="initial";
-    let table = document.getElementById("myTable").style.display="initial";
-    let card = document.getElementById("numCard").style.display="initial";
-
-
+    let table = document.getElementById("myTable").style.display="none";
+    let card = document.getElementById("numCard").style.display="none";
+    let chart = document.getElementById("myChart").style.display="none";
+    
     homeButt.style.background="rgb(147, 117, 255)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
@@ -136,9 +146,13 @@ shopName1.addEventListener("click", () => {
     
     document.getElementById("header").innerText="ร้านที่ 1";
     delrow();
+
     let Tae = document.getElementById("PTae").style.display="none";
     let To = document.getElementById("PTo").style.display="none";
-
+    let table = document.getElementById("myTable").style.display="initial";
+    let card = document.getElementById("numCard").style.display="initial";
+    let chart = document.getElementById("myChart").style.display="initial";
+    
     dataShop1.forEach((datashop1) => addrow());
 
     shopName1.style.background="rgb(147, 117, 255)";
@@ -154,7 +168,15 @@ shopName2.addEventListener("click", () => {
     
     document.getElementById("header").innerText="ร้านที่ 2";
     delrow();
-    addrow();
+
+    let Tae = document.getElementById("PTae").style.display="none";
+    let To = document.getElementById("PTo").style.display="none";
+    let table = document.getElementById("myTable").style.display="initial";
+    let card = document.getElementById("numCard").style.display="initial";
+    let chart = document.getElementById("myChart").style.display="initial";
+
+    dataShop2.forEach((datashop2) => addrow());
+
     shopName2.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
@@ -168,7 +190,15 @@ shopName3.addEventListener("click", () => {
     
     document.getElementById("header").innerText="ร้านที่ 3";
     delrow();
-    addrow();
+
+    let Tae = document.getElementById("PTae").style.display="none";
+    let To = document.getElementById("PTo").style.display="none";
+    let table = document.getElementById("myTable").style.display="initial";
+    let card = document.getElementById("numCard").style.display="initial";
+    let chart = document.getElementById("myChart").style.display="initial";
+
+    dataShop3.forEach((datashop3) => addrow());
+
     shopName3.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
