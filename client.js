@@ -62,8 +62,7 @@ let massPopChart = new Chart(myChart, {
 function login(){
     location.href = "./login-page.html"
 }
-
-
+ 
 let shopName1 = document.getElementById("v-pills-ร้าน1-tab");
 shopName1.addEventListener("click", () => {
     console.log("ร้าน1ครับ");
@@ -112,6 +111,7 @@ function delrow() {
     })
 }
   
+
   
 //   setInterval(() => {
 //     console.log(i);
