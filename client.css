@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
 
+*{
+    font-family: 'Athiti', sans-serif;
+}
+
 .my-btn {
     display: flex;
 }
@@ -23,6 +27,8 @@
 
 .header {
     font-family: 'Athiti', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .card-line {
@@ -37,4 +43,20 @@
 
 .nav-link {
     font-family: 'Athiti', sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    border: 1px solid black;
 }
+
+.col-2{
+    padding: 0%;
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
