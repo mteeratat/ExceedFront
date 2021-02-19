@@ -3,7 +3,9 @@
     flex-direction: column;
     justify-content: center;
 }   */
-
+body{
+    margin-top: 5%;
+}
 .container-fluid{
     display: flex;
     flex-direction: column;
