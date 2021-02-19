@@ -83,7 +83,7 @@ var dataShop2 = [{
     "hour": "17",
     "store": "2"
 },{
-    "firstname": "perza",
+    "firstname": "perza2",
     "lastname": "asds",
     "pplnum": "3",
     "tel": "0987654321",
@@ -102,7 +102,7 @@ var dataShop3 = [{
     "hour": "18",
     "store": "3"
 },{
-    "firstname": "m",
+    "firstname": "m2",
     "lastname": "kuau",
     "pplnum": "1",
     "tel": "0987654332",
@@ -111,7 +111,7 @@ var dataShop3 = [{
     "hour": "18",
     "store": "3"
 },{
-    "firstname": "m",
+    "firstname": "m3",
     "lastname": "kuau",
     "pplnum": "1",
     "tel": "0987654332",
@@ -152,9 +152,11 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
+    
     console.log(dataShop1);
-    dataShop1.forEach(() => addrow());
-
+    dataShop1.forEach((x) => {
+        addrow(x);
+    });
     shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
@@ -175,7 +177,10 @@ shopName2.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    dataShop2.forEach(() => addrow());
+    console.log(dataShop2);
+    dataShop2.forEach((x) => {
+        addrow(x);
+    });
 
     shopName2.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -197,7 +202,10 @@ shopName3.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    dataShop3.forEach(() => addrow());
+    console.log(dataShop3);
+    dataShop3.forEach((x) => {
+        addrow(x);
+    });
 
     shopName3.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -209,7 +217,7 @@ shopName3.addEventListener("click", () => {
 
 var i=0;
 
-function addrow() {
+function addrow(x) {
     var table = document.getElementById("myTable");
     i++;
     var row = table.insertRow(1);
@@ -218,11 +226,10 @@ function addrow() {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
-    // console.log(data);
-    cell1.innerHTML = "NEW CELL2";
-    cell2.innerHTML = "NEW CELL2";
-    cell3.innerHTML = "NEW CELL4";
-    cell4.innerHTML = "NEW CELL5";
+    cell1.innerHTML = x.firstname;
+    cell2.innerHTML = x.pplnum;
+    cell3.innerHTML = x.time;
+    cell4.innerHTML = x.date;
 }
 
 function delrow() {
