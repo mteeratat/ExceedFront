@@ -11,9 +11,7 @@ let massPopChart = new Chart(myChart, {
     data: {
         labels: ["Jan", "Feb", "March", "April"],
         datasets: [{
-            backgroundColor: [
-                "rgba(248, 205, 205, 0.6)"
-            ],
+            backgroundColor: "rgba(248, 205, 205, 0.6)",
             borderColor: "rgba(194, 201, 214, 0.6)",
             borderCapStyle: "round",
             borderWidth: "5",
@@ -21,21 +19,12 @@ let massPopChart = new Chart(myChart, {
             label: "Population",
             fill: true,
             lineTension: 0.1,
-            hoverBackgroundColor: [
-                "rgba(248, 205, 205, 0.8)"
-            ],
-            hoverBorderColor: "rgba(194, 201, 214, 0.8)",
-            order: 0,
-            pointBorderColor: [
-                "rgba(248, 205, 205, 0.6)"
-            ],
+            pointBorderColor: "rgba(194, 201, 214, 0.8)",
             pointBorderWidth: 5,
             pointHitRadius: 5,
-            pointHoverBackgroundColor: [
-                "rgba(248, 205, 205, 0.8)"
-            ],
-            pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
-            pointHoverBorderWidth: 5,
+            pointHoverBackgroundColor: "rgba(248, 205, 205, 0.8)",
+            pointHoverBorderColor: "rgba(194, 201, 214, 1)",
+            pointHoverBorderWidth: 5, 
             pointRadius: 10,
             pointStyle: "circle",
             showLine: true,
