@@ -315,6 +315,8 @@ function pplnow(index){
     document.getElementById("limit").innerText="/" + limit[index];
 }
 
+var massPopChart = null;
+
 function dataEach(numStore){
     let num = (numStore).toString();
     let myData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -355,7 +357,11 @@ function dataEach(numStore){
 
                       
         });
-        let massPopChart = new Chart(myChart, {
+        if (massPopChart != null){
+            massPopChart.destroy();
+        }
+
+        massPopChart = new Chart(myChart, {
                 type: "line",
                 data: {
                     labels: myTime,
