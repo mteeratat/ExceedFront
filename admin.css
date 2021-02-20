@@ -1,8 +1,84 @@
-.test {
-    color: aquamarine;
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+
+*{
+    font-family: 'Athiti', sans-serif;
 }
 
-.container {
-    width: 70%;
-    height: 70%;
+.my-btn {
+    display: flex;
 }
+
+.app{
+    display: flex;
+    justify-content: center;
+}
+
+#store-list{
+    justify-content: left;
+
+}
+
+#store-info{
+    display: flex;
+    background-color: rgb(221, 153, 27);
+    justify-content: center;
+    text-align: center;
+}
+
+.header {
+    font-family: 'Athiti', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.card-line {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.card-text1,.card-text2 {
+    font-family: 'Athiti', sans-serif;
+}
+
+.nav-link {
+    font-size:  large;
+    font-weight: bold;
+    /* padding-right: 0%; */
+    border-bottom: 0.75px solid rgba(241,240,236,0.6);
+    border-radius: 0.15rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.col-2{
+    padding: 0%;
+}
+.card{
+    border: none;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+#head {
+    display: flex;
+}
+
+.table-dark-blue {
+    --bs-table-bg: #0c1b2b;
+    --bs-table-striped-bg: #0e263d;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #0d2b42;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #142c4d;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #0d2c44;
+  }

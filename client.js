@@ -188,7 +188,7 @@ homeButt.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="none";
     let chart = document.getElementById("myChart").style.display="none";
     
-    homeButt.style.background="rgb(147, 117, 255)";
+    homeButt.style.background="#FF008A";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
@@ -212,7 +212,7 @@ shopName1.addEventListener("click", () => {
     dataShop1.forEach((x) => {
         addrow(x);
     });
-    shopName1.style.background="rgb(147, 117, 255)";
+    shopName1.style.background="#FF008A";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
@@ -237,7 +237,7 @@ shopName2.addEventListener("click", () => {
         addrow(x);
     });
 
-    shopName2.style.background="rgb(147, 117, 255)";
+    shopName2.style.background="#FF008A";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
@@ -262,7 +262,7 @@ shopName3.addEventListener("click", () => {
         addrow(x);
     });
 
-    shopName3.style.background="rgb(147, 117, 255)";
+    shopName3.style.background="#FF008A";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";

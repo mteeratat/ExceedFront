@@ -70,3 +70,15 @@
 #head {
     display: flex;
 }
+
+.table-dark-blue {
+    --bs-table-bg: #0c1b2b;
+    --bs-table-striped-bg: #0e263d;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #0d2b42;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #142c4d;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #0d2c44;
+  }
