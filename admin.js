@@ -113,7 +113,7 @@ let massPopChart = new Chart(myChart, {
 });
 
 function login(){
-    location.href = "./login-page.html"
+    location.href = "./client.html"
 }
 
 
