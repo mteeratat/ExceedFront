@@ -3,6 +3,7 @@ function postt() {
     const lastname = document.getElementById("lastname").value;
     const pplnum = document.getElementById("pplnum").value;
     const tel = document.getElementById("phone").value;
+    
     if (firstname == "" || lastname == "" || pplnum == "" || tel == "") {
         alert("Blank input Krubbb!!!");
         return
