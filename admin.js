@@ -189,9 +189,9 @@ homeButt.addEventListener("click", () => {
     let chart = document.getElementById("myChart").style.display="none";
     
     homeButt.style.background="#FF008A";
-    shopName1.style.background="rgb(111, 83, 212)";
-    shopName2.style.background="rgb(111, 83, 212)";
-    shopName3.style.background="rgb(111, 83, 212)";
+    shopName1.style.background="#ffc65c";
+    shopName2.style.background="#ffc65c";
+    shopName3.style.background="#ffc65c";
 
     console.log("ดอสั้นครับ");
 });
@@ -214,9 +214,9 @@ shopName1.addEventListener("click", () => {
     //     addrow(x);
     // });
     shopName1.style.background="#FF008A";
-    homeButt.style.background="rgb(111, 83, 212)";
-    shopName2.style.background="rgb(111, 83, 212)";
-    shopName3.style.background="rgb(111, 83, 212)";
+    homeButt.style.background="#ffc65c";
+    shopName2.style.background="#ffc65c";
+    shopName3.style.background="#ffc65c";
     
     pplnow(0);
 
@@ -240,9 +240,9 @@ shopName2.addEventListener("click", () => {
     dataEach(2);
 
     shopName2.style.background="#FF008A";
-    homeButt.style.background="rgb(111, 83, 212)";
-    shopName1.style.background="rgb(111, 83, 212)";
-    shopName3.style.background="rgb(111, 83, 212)";
+    homeButt.style.background="#ffc65c";
+    shopName1.style.background="#ffc65c";
+    shopName3.style.background="#ffc65c";
 
     pplnow(1);
 
@@ -266,9 +266,9 @@ shopName3.addEventListener("click", () => {
     dataEach(3);
 
     shopName3.style.background="#FF008A";
-    homeButt.style.background="rgb(111, 83, 212)";
-    shopName1.style.background="rgb(111, 83, 212)";
-    shopName2.style.background="rgb(111, 83, 212)";
+    homeButt.style.background="#ffc65c";
+    shopName1.style.background="#ffc65c";
+    shopName2.style.background="#ffc65c";
 
     pplnow(2);
 
@@ -363,11 +363,11 @@ function dataEach(numStore){
                     labels: myTime,
                     datasets: [{
                         backgroundColor: 
-                            "rgba(248, 205, 205, 0.6)"
+                            "#ff629e"
                         ,
-                        borderColor: "rgba(194, 201, 214, 0.6)",
+                        borderColor: "#ff2277",
                         borderCapStyle: "round",
-                        borderWidth: "5",
+                        borderWidth: "3",
                         // clip: {left: false, top: false, right: false, bottom: false},
                         label: "Population",
                         fill: true,
@@ -375,10 +375,10 @@ function dataEach(numStore){
                         // hoverBackgroundColor: "rgba(194, 201, 214, 0.8)",
                         // hoverBorderColor: "green",
                         pointBorderColor: 
-                            "rgba(194, 201, 214, 0.6)"
+                            "#ff2277"
                         ,
-                        pointBorderWidth: 2,
-                        pointHitRadius: 2,
+                        pointBorderWidth: 3,
+                        pointHitRadius: 5,
                         // pointHoverBackgroundColor: "rgba(248, 205, 205, 0.8)",
                         
                         // pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
