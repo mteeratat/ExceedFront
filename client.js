@@ -59,128 +59,64 @@ let myChart = document.getElementById("myChart").getContext("2d");
 //     }
 // });
 
-var testData = [];
-var myData = [];
+// var testData = ["9:00","10:00","11:00","12:00"];
+// testData.push("13:00");
+// var myData = [20, 10, 30, 20, 10, 20, 30, 40, 39];
 
-var d = new Date();
-var n = d.getHours();
-
-new Chart(myChart, {
-    type: "line",
-    data: {
-        labels: testData,
-        datasets: [{
-            backgroundColor: 
-                "rgba(248, 205, 205, 0.6)"
-            ,
-            borderColor: "rgba(194, 201, 214, 0.6)",
-            borderCapStyle: "round",
-            borderWidth: "5",
-            // clip: {left: false, top: false, right: false, bottom: false},
-            label: "Population",
-            fill: true,
-            lineTension: 0.1,
-            hoverBackgroundColor: 
-                "rgba(194, 201, 214, 0.8)"
-            ,
-            hoverBorderColor: "green",
-            pointBorderColor: 
-                "rgba(194, 201, 214, 0.6)"
-            ,
-            pointBorderWidth: 5,
-            pointHitRadius: 5,
-            pointHoverBackgroundColor:
-                "rgba(248, 205, 205, 0.8)"
-            ,
-            pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
-            pointHoverBorderWidth: 5,
-            pointRadius: 10,
-            pointStyle: "circle",
-            showLine: true,
+// let massPopChart = new Chart(myChart, {
+//     type: "line",
+//     data: {
+//         labels: testData,
+//         datasets: [{
+//             backgroundColor: 
+//                 "rgba(248, 205, 205, 0.6)"
+//             ,
+//             borderColor: "rgba(194, 201, 214, 0.6)",
+//             borderCapStyle: "round",
+//             borderWidth: "5",
+//             // clip: {left: false, top: false, right: false, bottom: false},
+//             label: "Population",
+//             fill: true,
+//             lineTension: 0.1,
+//             hoverBackgroundColor: 
+//                 "rgba(194, 201, 214, 0.8)"
+//             ,
+//             hoverBorderColor: "green",
+//             pointBorderColor: 
+//                 "rgba(194, 201, 214, 0.6)"
+//             ,
+//             pointBorderWidth: 5,
+//             pointHitRadius: 5,
+//             pointHoverBackgroundColor:
+//                 "rgba(248, 205, 205, 0.8)"
+//             ,
+//             pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+//             pointHoverBorderWidth: 5,
+//             pointRadius: 10,
+//             pointStyle: "circle",
+//             showLine: true,
             
-            data: myData
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks:{
-                    // suggestedMin: 0,
-                    beginAtZero: true,
-                    max: 50   
-                }
-            }]
-        }
-    }
-});
-
-function createGraph(hours){
-    hours = hours.toString();
-    fetch("http://158.108.182.14:50004/current?hour="+hours,{
-        method: "GET"
-    })
-    .then((response) => response.json())
-    .then((data) => data.result)
-    .then((datas) => {
-        console.log(datas);
-        new Chart(myChart, {
-            type: "line",
-            data: {
-                labels: testData,
-                datasets: [{
-                    backgroundColor: 
-                        "rgba(248, 205, 205, 0.6)"
-                    ,
-                    borderColor: "rgba(194, 201, 214, 0.6)",
-                    borderCapStyle: "round",
-                    borderWidth: "5",
-                    // clip: {left: false, top: false, right: false, bottom: false},
-                    label: "Population",
-                    fill: true,
-                    lineTension: 0.1,
-                    hoverBackgroundColor: 
-                        "rgba(194, 201, 214, 0.8)"
-                    ,
-                    hoverBorderColor: "green",
-                    pointBorderColor: 
-                        "rgba(194, 201, 214, 0.6)"
-                    ,
-                    pointBorderWidth: 5,
-                    pointHitRadius: 5,
-                    pointHoverBackgroundColor:
-                        "rgba(248, 205, 205, 0.8)"
-                    ,
-                    pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
-                    pointHoverBorderWidth: 5,
-                    pointRadius: 10,
-                    pointStyle: "circle",
-                    showLine: true,
-                    
-                    data: myData
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks:{
-                            // suggestedMin: 0,
-                            beginAtZero: true,
-                            max: 50   
-                        }
-                    }]
-                }
-            }
-        });
-    })
-    // .then((data) => {
-    //     console.log(data);
-    // })
-    .catch((error) => console.log("error", error));
-}
+//             data: myData
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks:{
+//                     // suggestedMin: 0,
+//                     beginAtZero: true,
+//                     max: 50   
+//                 }
+//             }]
+//         }
+//     }
+// });
 
 function login(){
-    location.href = "./loginsuccess.html"
+    location.href = "./client.html"
 }
+
+
 
 var dataShop1 = [{
     "firstname": "test",
@@ -240,6 +176,8 @@ var dataShop3 = [{
     "store": "3"
 }];
  
+var dataShop;
+
 let homeButt = document.getElementById("v-pills-DOORSON-tab");
 homeButt.addEventListener("click", () => {
     
@@ -252,7 +190,7 @@ homeButt.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="none";
     let chart = document.getElementById("myChart").style.display="none";
     
-    homeButt.style.background="#FF008A";
+    homeButt.style.background="rgb(147, 117, 255)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
@@ -271,19 +209,22 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
-    
-    console.log(dataShop1);
-    dataShop1.forEach((x) => {
-        addrow(x);
-    });
-    shopName1.style.background="#FF008A";
+
+    // console.log(dataShop1);
+    dataEach(1);
+    // console.log(dataEach(1));
+    // console.log(datt);
+    // datt.forEach((x) => {
+    //     addrow(x);
+    // });
+    shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
+    
     pplnow(0);
-    console.log("ร้าน1ครับ");
-    createGraph(19);
 
+    console.log("ร้าน1ครับ");
 });
 
 let shopName2 = document.getElementById("v-pills-ร้าน2-tab");
@@ -298,15 +239,17 @@ shopName2.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    console.log(dataShop2);
-    dataShop2.forEach((x) => {
-        addrow(x);
-    });
+    // console.log(dataShop2);
+    // dataShop2.forEach((x) => {
+    //     addrow(x);
+    // });
+    dataEach(2);
 
-    shopName2.style.background="#FF008A";
+    shopName2.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
+
     pplnow(1);
 
     console.log("ร้าน2ครับ");
@@ -324,15 +267,17 @@ shopName3.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    console.log(dataShop3);
-    dataShop3.forEach((x) => {
-        addrow(x);
-    });
+    // console.log(dataShop3);
+    // dataShop3.forEach((x) => {
+    //     addrow(x);
+    // });
+    dataEach(3);
 
-    shopName3.style.background="#FF008A";
+    shopName3.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
+
     pplnow(2);
 
     console.log("ร้าน3ครับ");
@@ -349,10 +294,12 @@ function addrow(x) {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+
     cell1.innerHTML = x.firstname;
     cell2.innerHTML = x.pplnum;
     cell3.innerHTML = x.time;
     cell4.innerHTML = x.date;
+
 }
 
 function delrow() {
@@ -361,7 +308,6 @@ function delrow() {
         a.remove()
     })
 }
-
 
 var limit = ["20","50","10"];
 
@@ -375,6 +321,103 @@ function pplnow(index){
         document.getElementById("n").innerText=n.total_users;
     });
     document.getElementById("limit").innerText="/" + limit[index];
+}
+
+function dataEach(numStore){
+    let num = (numStore).toString();
+    let myData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let myTime =["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+    let sum=0;
+
+    // let total_user = 0;
+    // fetch("http://158.108.182.14:3000/show_n?store="+num, {
+    //     method: "GET"
+    // })
+    // .then((n) => n.json())
+    // .then((n) => {
+    //     let nn = Number(n.total_users);
+    //     myData.push(nn);
+    // })
+
+    fetch("http://158.108.182.14:3000/show_admin?store="+num, {
+        method: "GET"
+    })
+    .then((response) => response.json())
+    // .then((n) => console.log(n))
+    .then((ns) => {
+        ns.result.forEach((x) => {
+            console.log(x);
+            addrow(x);
+         
+            let n = Number(x.pplnum)
+            // sum += n;
+            let bababa = x.time;
+            let ba = bababa.slice(0,2);
+            let b = Number(ba);
+            // let baba = ba+":00";
+            myData[b]++;
+           // myData.push(n);
+            // myTime.push(baba);
+
+            let massPopChart = new Chart(myChart, {
+                type: "line",
+                data: {
+                    labels: myTime,
+                    datasets: [{
+                        backgroundColor: 
+                            "rgba(248, 205, 205, 0.6)"
+                        ,
+                        borderColor: "rgba(194, 201, 214, 0.6)",
+                        borderCapStyle: "round",
+                        borderWidth: "5",
+                        // clip: {left: false, top: false, right: false, bottom: false},
+                        label: "Population",
+                        fill: true,
+                        lineTension: 0.1,
+                        hoverBackgroundColor: 
+                            "rgba(194, 201, 214, 0.8)"
+                        ,
+                        hoverBorderColor: "green",
+                        pointBorderColor: 
+                            "rgba(194, 201, 214, 0.6)"
+                        ,
+                        pointBorderWidth: 5,
+                        pointHitRadius: 5,
+                        pointHoverBackgroundColor:
+                            "rgba(248, 205, 205, 0.8)"
+                        ,
+                        pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+                        pointHoverBorderWidth: 5,
+                        pointRadius: 10,
+                        pointStyle: "circle",
+                        showLine: true,
+                        
+                        data: myData
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks:{
+                                // suggestedMin: 0,
+                                beginAtZero: true,
+                                max: 20   
+                            }
+                        }]
+                    }
+                }
+            });            
+        });
+    })
+    // console.log(myData, myTime);
+
+
+    
+    // .then((ns) => console.log(ns))
+    // .catch(err => console.log(err))
+    // dat => dat.json();
+    // console.log(dat);
+    // .catch((error) => console.log("error", error));
 }
 
 //   setInterval(() => {
