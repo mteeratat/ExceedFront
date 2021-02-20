@@ -105,7 +105,7 @@ function pplnow(index){
         // console.log("Success")
       }
       else{
-        document.getElementById("errormsg").innerHTML = "Invalid username and/or password"
+        document.getElementById("errormsg").innerHTML = "Invalid username and/or password";
         form.elements["firstname"].value = "";
         form.elements["lastname"].value = "";
         form.elements["pplnum"].value = "";
