@@ -59,58 +59,58 @@ let myChart = document.getElementById("myChart").getContext("2d");
 //     }
 // });
 
-var testData = ["9:00","10:00","11:00","12:00"];
-testData.push("13:00");
-var myData = [20, 10, 30, 20, 10, 20, 30, 40, 39];
+// var testData = ["9:00","10:00","11:00","12:00"];
+// testData.push("13:00");
+// var myData = [20, 10, 30, 20, 10, 20, 30, 40, 39];
 
-let massPopChart = new Chart(myChart, {
-    type: "line",
-    data: {
-        labels: testData,
-        datasets: [{
-            backgroundColor: 
-                "rgba(248, 205, 205, 0.6)"
-            ,
-            borderColor: "rgba(194, 201, 214, 0.6)",
-            borderCapStyle: "round",
-            borderWidth: "5",
-            // clip: {left: false, top: false, right: false, bottom: false},
-            label: "Population",
-            fill: true,
-            lineTension: 0.1,
-            hoverBackgroundColor: 
-                "rgba(194, 201, 214, 0.8)"
-            ,
-            hoverBorderColor: "green",
-            pointBorderColor: 
-                "rgba(194, 201, 214, 0.6)"
-            ,
-            pointBorderWidth: 5,
-            pointHitRadius: 5,
-            pointHoverBackgroundColor:
-                "rgba(248, 205, 205, 0.8)"
-            ,
-            pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
-            pointHoverBorderWidth: 5,
-            pointRadius: 10,
-            pointStyle: "circle",
-            showLine: true,
+// let massPopChart = new Chart(myChart, {
+//     type: "line",
+//     data: {
+//         labels: testData,
+//         datasets: [{
+//             backgroundColor: 
+//                 "rgba(248, 205, 205, 0.6)"
+//             ,
+//             borderColor: "rgba(194, 201, 214, 0.6)",
+//             borderCapStyle: "round",
+//             borderWidth: "5",
+//             // clip: {left: false, top: false, right: false, bottom: false},
+//             label: "Population",
+//             fill: true,
+//             lineTension: 0.1,
+//             hoverBackgroundColor: 
+//                 "rgba(194, 201, 214, 0.8)"
+//             ,
+//             hoverBorderColor: "green",
+//             pointBorderColor: 
+//                 "rgba(194, 201, 214, 0.6)"
+//             ,
+//             pointBorderWidth: 5,
+//             pointHitRadius: 5,
+//             pointHoverBackgroundColor:
+//                 "rgba(248, 205, 205, 0.8)"
+//             ,
+//             pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+//             pointHoverBorderWidth: 5,
+//             pointRadius: 10,
+//             pointStyle: "circle",
+//             showLine: true,
             
-            data: myData
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks:{
-                    // suggestedMin: 0,
-                    beginAtZero: true,
-                    max: 50   
-                }
-            }]
-        }
-    }
-});
+//             data: myData
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks:{
+//                     // suggestedMin: 0,
+//                     beginAtZero: true,
+//                     max: 50   
+//                 }
+//             }]
+//         }
+//     }
+// });
 
 function login(){
     location.href = "./client.html"
@@ -327,8 +327,20 @@ function pplnow(index){
 
 function dataEach(numStore){
     let num = (numStore).toString();
-    const data =[]
-    
+    let myData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let myTime =["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+    let sum=0;
+
+    // let total_user = 0;
+    // fetch("http://158.108.182.14:3000/show_n?store="+num, {
+    //     method: "GET"
+    // })
+    // .then((n) => n.json())
+    // .then((n) => {
+    //     let nn = Number(n.total_users);
+    //     myData.push(nn);
+    // })
+
     fetch("http://158.108.182.14:3000/show_admin?store="+num, {
         method: "GET"
     })
@@ -338,13 +350,76 @@ function dataEach(numStore){
         ns.result.forEach((x) => {
             console.log(x);
             addrow(x);
+         
+            let n = Number(x.pplnum)
+            // sum += n;
+            let bababa = x.time;
+            let ba = bababa.slice(0,2);
+            let b = Number(ba);
+            // let baba = ba+":00";
+            myData[b]++;
+           // myData.push(n);
+            // myTime.push(baba);
+
+            let massPopChart = new Chart(myChart, {
+                type: "line",
+                data: {
+                    labels: myTime,
+                    datasets: [{
+                        backgroundColor: 
+                            "rgba(248, 205, 205, 0.6)"
+                        ,
+                        borderColor: "rgba(194, 201, 214, 0.6)",
+                        borderCapStyle: "round",
+                        borderWidth: "5",
+                        // clip: {left: false, top: false, right: false, bottom: false},
+                        label: "Population",
+                        fill: true,
+                        lineTension: 0.1,
+                        hoverBackgroundColor: 
+                            "rgba(194, 201, 214, 0.8)"
+                        ,
+                        hoverBorderColor: "green",
+                        pointBorderColor: 
+                            "rgba(194, 201, 214, 0.6)"
+                        ,
+                        pointBorderWidth: 5,
+                        pointHitRadius: 5,
+                        pointHoverBackgroundColor:
+                            "rgba(248, 205, 205, 0.8)"
+                        ,
+                        pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+                        pointHoverBorderWidth: 5,
+                        pointRadius: 10,
+                        pointStyle: "circle",
+                        showLine: true,
+                        
+                        data: myData
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks:{
+                                // suggestedMin: 0,
+                                beginAtZero: true,
+                                max: 20   
+                            }
+                        }]
+                    }
+                }
+            });            
         });
     })
+    // console.log(myData, myTime);
+
+
+    
     // .then((ns) => console.log(ns))
     // .catch(err => console.log(err))
     // dat => dat.json();
     // console.log(dat);
-    .catch((error) => console.log("error", error));
+    // .catch((error) => console.log("error", error));
 }
 
 //   setInterval(() => {

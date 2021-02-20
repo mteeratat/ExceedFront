@@ -76,13 +76,14 @@ var limit = 20;
 
 function pplnow(index){
   let ind = (index+1).toString();
+  let total_user=0;
   fetch(`http://158.108.182.14:3000/show_n?store=${ind}`, {
       method: "GET"
   })
   .then((n) => n.json())
-  .then((ns) => ns.total_users)
+  .then((ns) => total_user =  ns.total_users)
   .then((nss) => {
-    console.log(nss);
+    console.log(nss, total_user);
     let form = document.getElementById("information");
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -94,13 +95,13 @@ function pplnow(index){
       // pplnow(0, pplnum);
       // var total_users = pplnow(0);
       console.log(nss+pplnumInt, limit)
-      if ((nss + pplnumInt) <= limit){
+      if ((total_user + pplnumInt) <= limit){
         await scream(firstname, lastname, pplnum, tel);
         form.elements["firstname"].value = "";
         form.elements["lastname"].value = "";
         form.elements["pplnum"].value = "";
         form.elements["tel"].value = "";    
-        document.location.href = "./submitSuccess.html";
+        // document.location.href = "./submitSuccess.html";
         // console.log("Success")
       }
       else{
