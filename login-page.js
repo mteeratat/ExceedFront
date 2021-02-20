@@ -5,10 +5,18 @@ function login(){
     var username = username_ele.value
     var password = password_ele.value
 
-    if (username == "admin" && password == "1234"){
+    if (username == "admin1" && password == "1234"){
         alert("Login successfully!")
-        location.href = "./admin.html"
-    } 
+        location.href = "./admin1.html"
+    }
+    else if (username == "admin2" && password == "12345"){
+        alert("Login successfully!")
+        location.href = "./admin2.html"
+    }
+    else if (username == "admin3" && password == "123456"){
+        alert("Login successfully!")
+        location.href = "./admin3.html"
+    }
     else{
         document.getElementById("errormsg").innerHTML = "Invalid username and/or password"
     }

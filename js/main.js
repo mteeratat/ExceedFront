@@ -4,7 +4,7 @@ function postt() {
     const pplnum = document.getElementById("pplnum").value;
     const tel = document.getElementById("phone").value;
 
-    fetch("http://localhost:3001/check_in", {
+    fetch("http://158.108.182.14:50004/check_in", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),
@@ -21,7 +21,7 @@ function postt() {
 }
 
 function test() {
-    fetch("http://localhost:3001/show_admin", {method: "GET"})
+    fetch("http://158.108.182.14:50004/data", {method: "GET"})
     .then((data) => data.text())
     .then((data) => console.log(data))
     .catch((error) => console.log("error na krub", error));
