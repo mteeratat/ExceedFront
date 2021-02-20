@@ -116,8 +116,6 @@ function login(){
     location.href = "./login-page.html"
 }
 
-
-
 var dataShop1 = [{
     "firstname": "test",
     "lastname": "sadf",
