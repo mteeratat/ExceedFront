@@ -12,11 +12,11 @@ function login(){
     }
     else if (username == "admin2" && password == "12345"){
         alert("Login successfully!")
-        location.href = "admin2.html"
+        location.href = "./admin.html"
     }
     else if (username == "admin3" && password == "123456"){
         alert("Login successfully!")
-        location.href = "admin3.html"
+        location.href = "./admin.html"
     }
     else{
         document.getElementById("errormsg").innerHTML = "Invalid username or password";
