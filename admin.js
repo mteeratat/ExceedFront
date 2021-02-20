@@ -281,10 +281,14 @@ function addrow(x) {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
     cell1.innerHTML = x.firstname;
-    cell2.innerHTML = x.pplnum;
-    cell3.innerHTML = x.time;
-    cell4.innerHTML = x.date;
+    cell2.innerHTML = x.lastname;
+    cell3.innerHTML = x.pplnum;
+    cell4.innerHTML = x.time;
+    cell5.innerHTML = x.date;
+    cell6.innerHTML = x.tel;
 }
 
 function delrow() {
