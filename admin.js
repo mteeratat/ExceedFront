@@ -176,6 +176,8 @@ var dataShop3 = [{
     "store": "3"
 }];
  
+var dataShop;
+
 let homeButt = document.getElementById("v-pills-DOORSON-tab");
 homeButt.addEventListener("click", () => {
     
@@ -208,10 +210,12 @@ shopName1.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    console.log(dataShop1);
-    dataShop1.forEach((x) => {
-        addrow(x);
-    });
+    // console.log(dataShop1);
+    dataEach(1);
+    // console.log(datt);
+    // datt.forEach((x) => {
+    //     addrow(x);
+    // });
     shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
@@ -307,15 +311,34 @@ function delrow() {
 var limit = ["20","50","10"];
 
 function pplnow(index){
-    fetch("http://158.108.182.14:3000/show_n",{
+    let ind = (index+1).toString();
+    fetch("http://158.108.182.14:3000/show_n?store="+ind, {
         method: "GET"
     })
     .then((n) => n.json())
     .then((n) => {
         document.getElementById("n").innerText=n.total_users;
-        
     });
     document.getElementById("limit").innerText="/" + limit[index];
+}
+
+function dataEach(numStore){
+    let num = (numStore).toString();
+    const data =[]
+    
+    fetch("http://158.108.182.14:3000/show_admin?store="+num, {
+        method: "GET"
+    })
+    .then((n) => n.json())
+    // .then((n) => console.log(n))
+    .then((ns) => {
+        ns.result.forEach((x) => {
+            console.log("kk");
+        });
+    })
+    .catch(err => console.log(err))
+    // dat => dat.json();
+    // console.log(dat);
 }
 
 //   setInterval(() => {
