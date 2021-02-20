@@ -176,6 +176,8 @@ var dataShop3 = [{
     "store": "3"
 }];
  
+var dataShop;
+
 let homeButt = document.getElementById("v-pills-DOORSON-tab");
 homeButt.addEventListener("click", () => {
     
@@ -207,16 +209,20 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
-    
-    console.log(dataShop1);
-    dataShop1.forEach((x) => {
-        addrow(x);
-    });
+
+    // console.log(dataShop1);
+    dataEach(1);
+    // console.log(datt);
+    // datt.forEach((x) => {
+    //     addrow(x);
+    // });
     shopName1.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
     
+    pplnow(0);
+
     console.log("ร้าน1ครับ");
 });
 
@@ -242,6 +248,8 @@ shopName2.addEventListener("click", () => {
     shopName1.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
 
+    pplnow(1);
+
     console.log("ร้าน2ครับ");
 });
 
@@ -266,6 +274,8 @@ shopName3.addEventListener("click", () => {
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
+
+    pplnow(2);
 
     console.log("ร้าน3ครับ");
 });
@@ -296,6 +306,32 @@ function delrow() {
     document.querySelectorAll('.myRow').forEach(function(a){
         a.remove()
     })
+}
+
+var limit = ["20","50","10"];
+
+function pplnow(index){
+    let ind = (index+1).toString();
+    fetch("http://158.108.182.14:3000/show_n?store="+ind, {
+        method: "GET"
+    })
+    .then((n) => n.json())
+    .then((n) => {
+        document.getElementById("n").innerText=n.total_users;
+    });
+    document.getElementById("limit").innerText="/" + limit[index];
+}
+
+function dataEach(numStore){
+    let num = (numStore).toString();
+    let dat=fetch("http://158.108.182.14:3000/show_admin?store="+num, {
+        method: "GET"
+    })
+    .then((n) => n.json())
+    // .then((n) => console.log(n))
+    .then()
+    // dat => dat.json();
+    // console.log(dat);
 }
 
 //   setInterval(() => {
