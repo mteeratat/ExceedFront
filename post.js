@@ -27,7 +27,7 @@ butt.addEventListener("click", () => {
   console.log("hello");
   // fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
   // fetch("https://randomuser.me/api/?results=10",{
-  fetch("http://158.108.182.14:50004/show_n", {
+  fetch("http://158.108.182.14:3000/show_n?store=1", {
     method: "GET",
   })
     .then((data) => data.text())
@@ -47,7 +47,7 @@ reset.addEventListener("click", () => {
 
 function scream(firstname, lastname, pplnum, tel) {
   return new Promise((resolve, reject) => {
-    fetch("http://158.108.182.14:3000/check_in", {
+    fetch("http://158.108.182.14:50004/check_in", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),
@@ -71,17 +71,75 @@ function scream(firstname, lastname, pplnum, tel) {
 // }
 
 // เอา function ผูกกับ form ใน html
-let form = document.getElementById("information");
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  firstname = form.elements["firstname"].value;
-  lastname = form.elements["lastname"].value;
-  pplnum = form.elements["pplnum"].value;
-  tel = form.elements["tel"].value;
-  await scream(firstname, lastname, pplnum, tel);
-  form.elements["firstname"].value = "";
-  form.elements["lastname"].value = "";
-  form.elements["pplnum"].value = "";
-  form.elements["tel"].value = "";
-  document.location.href = "./submitSuccess.html";
-});
+var limit = 20;
+// let total_user=0;
+
+function pplnow(index){
+  let ind = (index+1).toString();
+  fetch(`http://158.108.182.14:3000/show_n?store=${ind}`, {
+      method: "GET"
+  })
+  .then((n) => n.json())
+  .then((ns) => total_user = ns.total_users)
+  .then((nss) => {
+    console.log(nss);
+    let form = document.getElementById("information");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      firstname = form.elements["firstname"].value;
+      lastname = form.elements["lastname"].value;
+      pplnum = form.elements["pplnum"].value;
+      tel = form.elements["tel"].value;
+      let pplnumInt = Number(pplnum);
+      // pplnow(0, pplnum);
+      // var total_users = pplnow(0);
+      console.log(nss+pplnumInt)
+      if ((nss + pplnumInt) <= limit){
+        await scream(firstname, lastname, pplnum, tel);
+        // document.location.href = "./submitSuccess.html";
+        // console.log("Success")
+      }
+      else{
+        document.getElementById("errormsg").innerHTML = "Invalid username and/or password"
+        form.elements["firstname"].value = "";
+        form.elements["lastname"].value = "";
+        form.elements["pplnum"].value = "";
+        form.elements["tel"].value = "";    
+      }
+    });
+  })
+  
+  
+  .catch((error) => console.log("error", error));
+}
+pplnow(0);
+// let form = document.getElementById("information");
+// form.addEventListener("submit", async (event) => {
+//   event.preventDefault();
+//   firstname = form.elements["firstname"].value;
+//   lastname = form.elements["lastname"].value;
+//   pplnum = form.elements["pplnum"].value;
+//   tel = form.elements["tel"].value;
+//   let pplnumInt = Number(pplnum);
+//   // pplnow(0, pplnum);
+//   // var total_users = pplnow(0);
+//   total_user = 0;
+//   pplnow(0);
+//   console.log(total_user);
+//   if ((total_user+pplnumInt) <= limit){
+//     // await scream(firstname, lastname, pplnum, tel);
+//     // document.location.href = "./submitSuccess.html";
+//     console.log("Sucess")
+//   }
+//   else{
+//     document.getElementById("errormsg").innerHTML = "Invalid username and/or password"
+//     form.elements["firstname"].value = "";
+//     form.elements["lastname"].value = "";
+//     form.elements["pplnum"].value = "";
+//     form.elements["tel"].value = "";    
+//   }
+// });
+
+
+
+

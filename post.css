@@ -59,6 +59,13 @@ input[type=text] {
     border-radius: 5px;
 }
 
+#errormsg {
+    padding-top: 10px;
+    height: 30px;
+    margin-top: 2px;
+    color: crimson;
+}  
+
 /* .hr {
     margin-top: 5%;
 } */

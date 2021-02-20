@@ -212,6 +212,7 @@ shopName1.addEventListener("click", () => {
 
     // console.log(dataShop1);
     dataEach(1);
+    // console.log(dataEach(1));
     // console.log(datt);
     // datt.forEach((x) => {
     //     addrow(x);
@@ -238,10 +239,11 @@ shopName2.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    console.log(dataShop2);
-    dataShop2.forEach((x) => {
-        addrow(x);
-    });
+    // console.log(dataShop2);
+    // dataShop2.forEach((x) => {
+    //     addrow(x);
+    // });
+    dataEach(2);
 
     shopName2.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -265,10 +267,11 @@ shopName3.addEventListener("click", () => {
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
 
-    console.log(dataShop3);
-    dataShop3.forEach((x) => {
-        addrow(x);
-    });
+    // console.log(dataShop3);
+    // dataShop3.forEach((x) => {
+    //     addrow(x);
+    // });
+    dataEach(3);
 
     shopName3.style.background="rgb(147, 117, 255)";
     homeButt.style.background="rgb(111, 83, 212)";
@@ -334,9 +337,11 @@ function dataEach(numStore){
     .then((ns) => {
         ns.result.forEach((x) => {
             console.log(x);
+            addrow(x);
         });
     })
-    .catch(err => console.log(err))
+    // .then((ns) => console.log(ns))
+    // .catch(err => console.log(err))
     // dat => dat.json();
     // console.log(dat);
     .catch((error) => console.log("error", error));
