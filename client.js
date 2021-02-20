@@ -61,6 +61,7 @@ let myChart = document.getElementById("myChart").getContext("2d");
 
 var testData = ["9:00","10:00","11:00","12:00"];
 testData.push("13:00");
+var myData = [20, 10, 30, 20, 10, 20, 30, 40, 39];
 
 let massPopChart = new Chart(myChart, {
     type: "line",
@@ -95,7 +96,7 @@ let massPopChart = new Chart(myChart, {
             pointStyle: "circle",
             showLine: true,
             
-            data: [20, 10, 30, 20, 10, 20, 30, 40, 39]
+            data: myData
         }]
     },
     options: {
