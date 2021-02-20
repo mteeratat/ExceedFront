@@ -74,7 +74,7 @@ body{
 }
 
 .table-dark-blue {
-    --bs-table-bg: rgb(170, 115, 221);
+    --bs-table-bg: rgb(195, 119, 230);
     --bs-table-striped-bg: rgb(223, 147, 241);
     --bs-table-striped-color: #fff;
     --bs-table-active-bg: #0d2b42;
@@ -83,4 +83,8 @@ body{
     --bs-table-hover-color: #fff;
     color: #fff;
     border-color: rgb(150, 83, 212);
-  }
+}
+
+.tHead {
+    --bs-table-bg: rgb(173, 96, 218);
+}
