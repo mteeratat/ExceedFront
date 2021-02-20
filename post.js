@@ -80,7 +80,7 @@ function pplnow(index){
       method: "GET"
   })
   .then((n) => n.json())
-  .then((ns) => total_user = ns.total_users)
+  .then((ns) => ns.total_users)
   .then((nss) => {
     console.log(nss);
     let form = document.getElementById("information");
@@ -93,10 +93,14 @@ function pplnow(index){
       let pplnumInt = Number(pplnum);
       // pplnow(0, pplnum);
       // var total_users = pplnow(0);
-      console.log(nss+pplnumInt)
+      console.log(nss+pplnumInt, limit)
       if ((nss + pplnumInt) <= limit){
         await scream(firstname, lastname, pplnum, tel);
-        // document.location.href = "./submitSuccess.html";
+        form.elements["firstname"].value = "";
+        form.elements["lastname"].value = "";
+        form.elements["pplnum"].value = "";
+        form.elements["tel"].value = "";    
+        document.location.href = "./submitSuccess.html";
         // console.log("Success")
       }
       else{

@@ -3,7 +3,9 @@
 *{
     font-family: 'Athiti', sans-serif;
 }
-
+body{
+    overflow-x: scroll;
+}
 .my-btn {
     display: flex;
 }

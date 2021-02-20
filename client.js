@@ -59,11 +59,13 @@ let myChart = document.getElementById("myChart").getContext("2d");
 //     }
 // });
 
-var testData = ["9:00","10:00","11:00","12:00"];
-testData.push("13:00");
-var myData = [20, 10, 30, 20, 10, 20, 30, 40, 39];
+var testData = [];
+var myData = [];
 
-let massPopChart = new Chart(myChart, {
+var d = new Date();
+var n = d.getHours();
+
+new Chart(myChart, {
     type: "line",
     data: {
         labels: testData,
@@ -111,6 +113,70 @@ let massPopChart = new Chart(myChart, {
         }
     }
 });
+
+function createGraph(hours){
+    hours = hours.toString();
+    fetch("http://158.108.182.14:50004/current?hour="+hours,{
+        method: "GET"
+    })
+    .then((response) => response.json())
+    .then((data) => data.result)
+    .then((datas) => {
+        console.log(datas);
+        new Chart(myChart, {
+            type: "line",
+            data: {
+                labels: testData,
+                datasets: [{
+                    backgroundColor: 
+                        "rgba(248, 205, 205, 0.6)"
+                    ,
+                    borderColor: "rgba(194, 201, 214, 0.6)",
+                    borderCapStyle: "round",
+                    borderWidth: "5",
+                    // clip: {left: false, top: false, right: false, bottom: false},
+                    label: "Population",
+                    fill: true,
+                    lineTension: 0.1,
+                    hoverBackgroundColor: 
+                        "rgba(194, 201, 214, 0.8)"
+                    ,
+                    hoverBorderColor: "green",
+                    pointBorderColor: 
+                        "rgba(194, 201, 214, 0.6)"
+                    ,
+                    pointBorderWidth: 5,
+                    pointHitRadius: 5,
+                    pointHoverBackgroundColor:
+                        "rgba(248, 205, 205, 0.8)"
+                    ,
+                    pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+                    pointHoverBorderWidth: 5,
+                    pointRadius: 10,
+                    pointStyle: "circle",
+                    showLine: true,
+                    
+                    data: myData
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks:{
+                            // suggestedMin: 0,
+                            beginAtZero: true,
+                            max: 50   
+                        }
+                    }]
+                }
+            }
+        });
+    })
+    // .then((data) => {
+    //     console.log(data);
+    // })
+    .catch((error) => console.log("error", error));
+}
 
 function login(){
     location.href = "./loginsuccess.html"
@@ -214,8 +280,10 @@ shopName1.addEventListener("click", () => {
     homeButt.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
-    
+    pplnow(0);
     console.log("ร้าน1ครับ");
+    createGraph(19);
+
 });
 
 let shopName2 = document.getElementById("v-pills-ร้าน2-tab");
@@ -239,6 +307,7 @@ shopName2.addEventListener("click", () => {
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
+    pplnow(1);
 
     console.log("ร้าน2ครับ");
 });
@@ -264,6 +333,7 @@ shopName3.addEventListener("click", () => {
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
+    pplnow(2);
 
     console.log("ร้าน3ครับ");
 });
@@ -290,6 +360,21 @@ function delrow() {
     document.querySelectorAll('.myRow').forEach(function(a){
         a.remove()
     })
+}
+
+
+var limit = ["20","50","10"];
+
+function pplnow(index){
+    let ind = (index+1).toString();
+    fetch("http://158.108.182.14:3000/show_n?store="+ind, {
+        method: "GET"
+    })
+    .then((n) => n.json())
+    .then((n) => {
+        document.getElementById("n").innerText=n.total_users;
+    });
+    document.getElementById("limit").innerText="/" + limit[index];
 }
 
 //   setInterval(() => {
