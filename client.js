@@ -381,7 +381,11 @@ function dataEach(numStore){
                         
                         // pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
                         // pointHoverBorderWidth: 5,
+<<<<<<< HEAD
                         pointRadius: 4,
+=======
+                        pointRadius: 5,
+>>>>>>> 52fa81cd6ebeb56765420407a8bd65279962902c
                         pointStyle: "circle",
                         showLine: true,
                         
