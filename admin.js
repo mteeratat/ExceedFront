@@ -207,7 +207,7 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
-    
+
     console.log(dataShop1);
     dataShop1.forEach((x) => {
         addrow(x);
@@ -217,6 +217,8 @@ shopName1.addEventListener("click", () => {
     shopName2.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
     
+    pplnow(0);
+
     console.log("ร้าน1ครับ");
 });
 
@@ -242,6 +244,8 @@ shopName2.addEventListener("click", () => {
     shopName1.style.background="rgb(111, 83, 212)";
     shopName3.style.background="rgb(111, 83, 212)";
 
+    pplnow(1);
+
     console.log("ร้าน2ครับ");
 });
 
@@ -266,6 +270,8 @@ shopName3.addEventListener("click", () => {
     homeButt.style.background="rgb(111, 83, 212)";
     shopName1.style.background="rgb(111, 83, 212)";
     shopName2.style.background="rgb(111, 83, 212)";
+
+    pplnow(2);
 
     console.log("ร้าน3ครับ");
 });
@@ -296,6 +302,20 @@ function delrow() {
     document.querySelectorAll('.myRow').forEach(function(a){
         a.remove()
     })
+}
+
+var limit = ["20","50","10"];
+
+function pplnow(index){
+    fetch("http://158.108.182.14:3000/show_n",{
+        method: "GET"
+    })
+    .then((n) => n.json())
+    .then((n) => {
+        document.getElementById("n").innerText=n.total_users;
+        
+    });
+    document.getElementById("limit").innerText="/" + limit[index];
 }
 
 //   setInterval(() => {
