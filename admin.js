@@ -112,7 +112,7 @@ let myChart = document.getElementById("myChart").getContext("2d");
 //     }
 // });
 
-function login(){
+function logout(){
     location.href = "./client.html"
 }
 
