@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Information</title>
+    <title>DOORSon</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -23,23 +23,23 @@
                     <form method="POST" id="signup-form" class="signup-form"></form>
                         <h2 class="form-title" id="title-door" style="font-family: 'Athiti', sans-serif;">DOORSon</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="firstname" id="firstname" placeholder="ชื่อจริง"/>
+                            <input type="text" class="form-input" name="firstname" id="firstname" placeholder="ชื่อจริง" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="lastname" id="lastname" placeholder="นามสกุล"/>
+                            <input type="text" class="form-input" name="lastname" id="lastname" placeholder="นามสกุล" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="pplnum" placeholder="จำนวนคน"/>
+                            <input type="text" class="form-input" name="name" id="pplnum" placeholder="จำนวนคน" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="phone" placeholder="เบอร์ติดต่อ"/>
+                            <input type="text" class="form-input" name="name" id="phone" placeholder="เบอร์ติดต่อ" required/>
                         </div>
                         <!-- <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                             <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                         </div> -->
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit" onclick="postt()"/>
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Submit" onclick="check_total(0)"/>
                         </div>
                     </form>
                     <p class="loginhere">
