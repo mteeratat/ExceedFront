@@ -324,14 +324,21 @@ function pplnow(index){
 
 function dataEach(numStore){
     let num = (numStore).toString();
-    let dat=fetch("http://158.108.182.14:3000/show_admin?store="+num, {
-        method: "GET"
+    fetch("http://158.108.182.14:3000/show_admin?store="+num, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify({date: date,firstname: firstname,lastname: lastname,pplnum: pplnum,store: store,time: time}),
     })
-    .then((n) => n.json())
+    .then((response) => response.json())
     // .then((n) => console.log(n))
-    .then()
+    .then((response) => console.log(response))
+    .then((result => result.forEach((x)=>console.log(x))))
+    // data.forEach((x) => console.log(x))
     // dat => dat.json();
     // console.log(dat);
+    .catch((error) => console.log("error", error));
 }
 
 //   setInterval(() => {
