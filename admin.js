@@ -351,17 +351,20 @@ function dataEach(numStore){
             console.log(x);
             addrow(x);
          
-            let n = Number(x.pplnum)
+            let n = Number(x.pplnum);
             // sum += n;
             let bababa = x.time;
             let ba = bababa.slice(0,2);
             let b = Number(ba);
             // let baba = ba+":00";
-            myData[b]++;
+            console.log(b, n);
+            myData[b] += n;
            // myData.push(n);
             // myTime.push(baba);
 
-            let massPopChart = new Chart(myChart, {
+                      
+        });
+        let massPopChart = new Chart(myChart, {
                 type: "line",
                 data: {
                     labels: myTime,
@@ -376,20 +379,17 @@ function dataEach(numStore){
                         label: "Population",
                         fill: true,
                         lineTension: 0.1,
-                        hoverBackgroundColor: 
-                            "rgba(194, 201, 214, 0.8)"
-                        ,
-                        hoverBorderColor: "green",
+                        // hoverBackgroundColor: "rgba(194, 201, 214, 0.8)",
+                        // hoverBorderColor: "green",
                         pointBorderColor: 
                             "rgba(194, 201, 214, 0.6)"
                         ,
                         pointBorderWidth: 5,
                         pointHitRadius: 5,
-                        pointHoverBackgroundColor:
-                            "rgba(248, 205, 205, 0.8)"
-                        ,
-                        pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
-                        pointHoverBorderWidth: 5,
+                        // pointHoverBackgroundColor: "rgba(248, 205, 205, 0.8)",
+                        
+                        // pointHoverBorderColor: "rgba(194, 201, 214, 0.8)",
+                        // pointHoverBorderWidth: 5,
                         pointRadius: 10,
                         pointStyle: "circle",
                         showLine: true,
@@ -408,8 +408,7 @@ function dataEach(numStore){
                         }]
                     }
                 }
-            });            
-        });
+            });  
     })
     // console.log(myData, myTime);
 
