@@ -184,8 +184,6 @@ homeButt.addEventListener("click", () => {
     document.getElementById("header").innerText="DOORSon";
     delrow();
 
-    let Tae = document.getElementById("PTae").style.display="initial";
-    let To = document.getElementById("PTo").style.display="initial";
     let table = document.getElementById("myTable").style.display="none";
     let card = document.getElementById("numCard").style.display="none";
     let chart = document.getElementById("myChart").style.display="none";
@@ -204,8 +202,6 @@ shopName1.addEventListener("click", () => {
     document.getElementById("header").innerText="ร้านที่ 1";
     delrow();
 
-    let Tae = document.getElementById("PTae").style.display="none";
-    let To = document.getElementById("PTo").style.display="none";
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
@@ -233,8 +229,6 @@ shopName2.addEventListener("click", () => {
     document.getElementById("header").innerText="ร้านที่ 2";
     delrow();
 
-    let Tae = document.getElementById("PTae").style.display="none";
-    let To = document.getElementById("PTo").style.display="none";
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
@@ -261,8 +255,6 @@ shopName3.addEventListener("click", () => {
     document.getElementById("header").innerText="ร้านที่ 3";
     delrow();
 
-    let Tae = document.getElementById("PTae").style.display="none";
-    let To = document.getElementById("PTo").style.display="none";
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
@@ -328,7 +320,8 @@ function dataEach(numStore){
     let myData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     let myTime =["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
     let sum=0;
-
+    let indexLim = numStore-1
+    let lim = Number(limit[indexLim]);
     // let total_user = 0;
     // fetch("http://158.108.182.14:3000/show_n?store="+num, {
     //     method: "GET"
@@ -401,14 +394,14 @@ function dataEach(numStore){
                             ticks:{
                                 // suggestedMin: 0,
                                 beginAtZero: true,
-                                max: 20   
+                                max: lim
                             }
                         }]
                     }
                 }
             });  
     })
-    // console.log(myData, myTime);
+    console.log(myData, myTime);
 
 
     
