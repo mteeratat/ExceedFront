@@ -26,8 +26,8 @@ let butt = document.getElementById("test");
 butt.addEventListener("click", () => {
   console.log("hello");
   // fetch("http://158.108.182.0:20012/app/admin/exceed_group12/test/602abc24dddf8400071eec35",{
-  fetch("https://randomuser.me/api/?results=10",{
-  // fetch("http://158.108.182.14:50004/data", {
+  // fetch("https://randomuser.me/api/?results=10",{
+  fetch("http://158.108.182.14:50004/show_n", {
     method: "GET",
   })
     .then((data) => data.text())
@@ -47,7 +47,7 @@ reset.addEventListener("click", () => {
 
 function scream(firstname, lastname, pplnum, tel) {
   return new Promise((resolve, reject) => {
-    fetch("http://158.108.182.14:50004/data", {
+    fetch("http://158.108.182.14:3000/check_in", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstname: firstname, lastname: lastname, pplnum: pplnum, tel: tel }),

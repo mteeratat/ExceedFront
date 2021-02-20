@@ -103,7 +103,8 @@ let massPopChart = new Chart(myChart, {
             yAxes: [{
                 ticks:{
                     // suggestedMin: 0,
-                    beginAtZero: true          
+                    beginAtZero: true,
+                    max: 50   
                 }
             }]
         }
@@ -113,6 +114,8 @@ let massPopChart = new Chart(myChart, {
 function login(){
     location.href = "./login-page.html"
 }
+
+
 
 var dataShop1 = [{
     "firstname": "test",
