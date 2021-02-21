@@ -278,8 +278,8 @@ shopName3.addEventListener("click", () => {
 var i=0;
 
 function addrow(x) {
-    
-    if (x.pplnum <= 0){
+    let n = Number(x.pplnum);
+    if (n <= 0){
         return ;
     }
     var table = document.getElementById("myTable");
@@ -347,11 +347,12 @@ function dataEach(numStore){
     // .then((n) => console.log(n))
     .then((ns) => {
         ns.result.forEach((x) => {
-            if (x.pplnum > 0){
+            let n = Number(x.pplnum);
+
+            if (n > 0){
                 console.log(x);
                 addrow(x);
             
-                let n = Number(x.pplnum);
                 // sum += n;
                 let bababa = x.time;
                 let ba = bababa.slice(0,2);
