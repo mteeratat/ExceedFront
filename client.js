@@ -318,7 +318,14 @@ function pplnow(index){
     })
     .then((n) => n.json())
     .then((n) => {
-        document.getElementById("n").innerText=n.total_users;
+        if (n.total_users >= 0){
+            document.getElementById("n").innerText=n.total_users;
+            console.log(n.total_users);            
+        }
+        else{
+            console.log("total users less than 0")
+            document.getElementById("n").innerText=0;
+        }
     });
     document.getElementById("limit").innerText="/" + limit[index];
 }
