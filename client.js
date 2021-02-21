@@ -187,7 +187,8 @@ homeButt.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="none";
     let card = document.getElementById("numCard").style.display="none";
     let chart = document.getElementById("myChart").style.display="none";
-    
+    let hPic = document.getElementById("homePic").style.display="initial";
+
     homeButt.style.background="#FF008A";
     shopName1.style.background="#ffc65c";
     shopName2.style.background="#ffc65c";
@@ -205,6 +206,7 @@ shopName1.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
+    let hPic = document.getElementById("homePic").style.display="none";
 
     // console.log(dataShop1);
     dataEach(1);
@@ -232,6 +234,7 @@ shopName2.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
+    let hPic = document.getElementById("homePic").style.display="none";
 
     // console.log(dataShop2);
     // dataShop2.forEach((x) => {
@@ -258,6 +261,7 @@ shopName3.addEventListener("click", () => {
     let table = document.getElementById("myTable").style.display="initial";
     let card = document.getElementById("numCard").style.display="initial";
     let chart = document.getElementById("myChart").style.display="initial";
+    let hPic = document.getElementById("homePic").style.display="none";
 
     // console.log(dataShop3);
     // dataShop3.forEach((x) => {
