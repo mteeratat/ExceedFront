@@ -32,7 +32,7 @@ function test() {
     .catch((error) => console.log("error na krub", error));
 }
 
-var limit = 20;
+var limit = 30;
 
 function check_total(index) {
     let ind = (index+1).toString();

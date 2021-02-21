@@ -304,7 +304,7 @@ function delrow() {
     })
 }
 
-var limit = ["20","50","10"];
+var limit = ["30","50","10"];
 
 function pplnow(index){
     let ind = (index+1).toString();
