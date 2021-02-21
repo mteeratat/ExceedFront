@@ -4,32 +4,21 @@ from datetime import datetime
 import pytz
 from flask_cors import CORS, cross_origin
 from bson.json_util import dumps
+from random import randint
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/": {"origins": "*"}})
 app.config['MONGO_URI'] = 'mongodb://exceed_group12:nhm88g6s@158.108.182.0:2255/exceed_group12'
 mongo = PyMongo(app)
 
-cors = CORS(app, resource={r"/": {"origins": "*"}})
+#cors = CORS(app, support_credentials=True)
 
 doorsonCollections = mongo.db.data
-userCollection = mongo.db.user
-
-@app.route('/regist', methods=['POST'])
-@cross_origin()
-def register():
-    data = request.json
-
-    regist_query = {
-        "username" : data["username"],
-        "password" : data["password"],
-        "confirm_pass" : data["confirm_pass"]
-    }
-    userCollection.insert(regist_query)
-    return {"result" : "Register Successfully"}
 
 @app.route('/check_in', methods=['POST'])
 @cross_origin()
 def check_in():
+    #v = randint(1, 3)
     data = request.json
     now = datetime.now(pytz.timezone('Asia/Bangkok'))
     check_in_query = {
@@ -39,10 +28,24 @@ def check_in():
         "tel" : data["tel"],
         "date" : now.strftime("%d/%b/%Y"),
         "time" : now.strftime('%H:%M:%S'),
-        "hour" : now.strftime('%H')
+        "hour" : now.strftime('%H'),
+        "store" : "1"
     }
     doorsonCollections.insert(check_in_query)
     return {"result" : "Check-In Successfully"}
+
+@app.route('/current', methods=['GET'])
+@cross_origin()
+def currentpop():
+    hour = request.args.get('hour', -1)
+    query = doorsonCollections.find();
+    n = 0
+    output = []
+    for i in query:
+        if i['hour'] == hour:
+            n+=1
+
+    return {"result" : n}
 
 
 @app.route('/show_n', methods=['GET'])
@@ -95,6 +98,49 @@ def show_users():
         })
     return {"result" : output}
 
+@app.route('/data', methods=['GET'])
+@cross_origin()
+def getall():
+    f_name = request.args.get('firstname', -1)
+    l_name = request.args.get('lastname', -1)
+    people = request.args.get('people', -1)
+    phone_num = request.args.get('phone_num', -1)
+    hour = request.args.get('hour', -1)
+    store = request.args.get('store', -1)
+
+    if f_name != -1:
+        flit={'firstname': f_name}
+        query = doorsonCollections.find(flit)
+    elif l_name != -1:
+        flit={'lastname': l_name}
+        query = doorsonCollections.find(flit)
+    elif people != -1:
+        flit={'pplnum': people}
+        query = doorsonCollections.find(flit)
+    elif phone_num != -1:
+        flit={'tel': phone_num}
+        query = doorsonCollections.find(flit)
+    elif hour != -1:
+        flit={'hour': hour}
+        query = doorsonCollections.find(flit)
+    elif store != -1:
+        flit={'store': store}
+        query = doorsonCollections.find(flit)
+    else:
+        query = doorsonCollections.find()
+
+    output = []
+    for i in query:
+        output.append({
+            'firstname' : i['firstname'],
+            'lastname' : i['lastname'],
+            'pplnum' : i['pplnum'],
+            'tel' : i['tel'],
+            'hour' : i['hour'],
+            'store' : i['store']
+        })
+    
+    return {'result': output}
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='3001', debug=True)
+    app.run(host='0.0.0.0', port='50004', debug=True) 
