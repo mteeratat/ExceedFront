@@ -278,6 +278,10 @@ shopName3.addEventListener("click", () => {
 var i=0;
 
 function addrow(x) {
+    
+    if (x.pplnum <= 0){
+        return ;
+    }
     var table = document.getElementById("myTable");
     i++;
     var row = table.insertRow(1);
@@ -343,19 +347,21 @@ function dataEach(numStore){
     // .then((n) => console.log(n))
     .then((ns) => {
         ns.result.forEach((x) => {
-            console.log(x);
-            addrow(x);
-         
-            let n = Number(x.pplnum);
-            // sum += n;
-            let bababa = x.time;
-            let ba = bababa.slice(0,2);
-            let b = Number(ba);
-            // let baba = ba+":00";
-            console.log(b, n);
-            myData[b] += n;
-           // myData.push(n);
-            // myTime.push(baba);
+            if (x.pplnum > 0){
+                console.log(x);
+                addrow(x);
+            
+                let n = Number(x.pplnum);
+                // sum += n;
+                let bababa = x.time;
+                let ba = bababa.slice(0,2);
+                let b = Number(ba);
+                // let baba = ba+":00";
+                console.log(b, n);
+                myData[b] += n;
+            // myData.push(n);
+                // myTime.push(baba);
+            }
         });
 
         if (massPopChart != null){
