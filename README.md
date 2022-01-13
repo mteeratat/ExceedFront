@@ -17,7 +17,7 @@ Exceed camp 2021 FrontEnd
 <h2>เครื่องมือที่ใช้</h2>
 <ol>
 <li>HTML5/CSS/Javascript</li><br>
-<li>ใช่ Bootstrap 5 Framework เพื่อช่วยตกแต่ง</li>
+<li>ใช้ Bootstrap 5 Framework เพื่อช่วยตกแต่ง</li>
 </ol>
 
 <h2>ตัวอย่างหน้าเว็บ</h2>
