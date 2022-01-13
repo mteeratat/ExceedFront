@@ -14,7 +14,13 @@ Exceed camp 2021 FrontEnd
 <li>หน้า Login สำหรับ Admin</li>
 </ol>
 
-<h1>ตัวอย่างหน้าเว็บ</h1>
+<h2>เครื่องมือที่ใช้</h2>
+<ol>
+<li>HTML5/CSS/Javascript</li><br>
+<li>ใช่ Bootstrap 5 Framwork เพื่อช่วยตกแต่ง</li>
+</ol>
+
+<h2>ตัวอย่างหน้าเว็บ</h2>
 
 <p>หน้า SUBMIT Form สำหรับการเก็บข้อมูลของลูกค้าที่เข้าร้านเพื่อเก็บใน Database</p>
 
